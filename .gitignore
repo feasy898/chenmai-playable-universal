@@ -1,0 +1,46 @@
+# ============================================================================
+# chenmai-playable-universal · 白名单制度（新仓首日生效）
+# 依据：_playable_plan/最终规划文档.md §5.1 硬前提 + 最终测试文档.md §六
+# 教训（基线 §六.1/§六.6）：五仓 .gitignore 排除 tmp/out 致 6 处 A 级主张永久停 B、
+# 复跑覆盖毁前跑，留档转正靠逐案 force-add 不是制度。
+# 制度：默认忽略一切，只放行下方白名单；新增顶层条目必须在此显式登记。
+# ============================================================================
+
+/*
+
+# --- 制度与说明 ---
+!/.gitignore
+!/.gitattributes
+!/README.md
+
+# --- 常量表（U-06：待拍板阈值集中于此，grep 无散落） ---
+!/config/
+
+# --- 测试数据与夹具（测试文档 §六） ---
+!/fixtures/
+!/data/
+
+# --- 门禁留档根（首日白名单放行；只追加，同门禁重跑落新目录） ---
+!/runs/
+
+# --- 仓库工具（复核器/探针等，只用标准库） ---
+!/tools/
+
+# --- 七模块空壳（规划 §5.2：intake/understand/plan/synthesize/package/judge/report-regression） ---
+!/intake/
+!/understand/
+!/plan/
+!/synthesize/
+!/package/
+!/judge/
+!/report-regression/
+
+# --- 例外：oracle 源包隔离目录永不入库（真实源包禁入 git，规划 §6.5 红线） ---
+/data/oracle-isolated/
+
+# --- 通用杂物（即使在白名单目录内也排除） ---
+node_modules/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
