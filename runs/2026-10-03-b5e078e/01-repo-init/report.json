@@ -1,0 +1,8 @@
+{
+  "gate": "repo-init",
+  "probe": "append-only",
+  "commit": "b5e078e",
+  "checks": {
+    "targetFresh": true
+  }
+}
