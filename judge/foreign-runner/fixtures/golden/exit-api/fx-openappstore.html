@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>fx-openappstore</title></head>
+<body>
+<h1>fx-openappstore</h1>
+<script>
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('status').textContent = 'ready';
+    });
+  });
+</script>
+<p id="status">init</p>
+<script>
+  document.addEventListener('pointerdown', function first() {
+    document.removeEventListener('pointerdown', first);
+    try {
+      if (typeof window.openAppStore === 'function') {
+        window.openAppStore();
+      }
+    } catch (e) {}
+  }, { once: false });
+</script>
+</body>
+</html>

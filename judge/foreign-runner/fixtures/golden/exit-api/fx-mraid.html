@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>fx-mraid</title></head>
+<body>
+<h1>fx-mraid</h1>
+<script>
+  // rAF animation
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('status').textContent = 'ready';
+    });
+  });
+</script>
+<p id="status">init</p>
+<script>
+  document.addEventListener('pointerdown', function first() {
+    document.removeEventListener('pointerdown', first);
+    try {
+      if (typeof window.mraid !== 'undefined' && typeof window.mraid.open === 'function') {
+        window.mraid.open('market://detail?id=example');
+      }
+    } catch (e) {}
+  }, { once: false });
+</script>
+</body>
+</html>

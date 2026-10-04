@@ -1,0 +1,40 @@
+{
+  "version": "humanlike-lite-v0",
+  "root_seed": "20261004",
+  "params": {
+    "firstInteractionDelayMinMs": 2500,
+    "maxGestures": 18,
+    "dragDistance": 44,
+    "jitterXyRatio": 0.2,
+    "intervalMs": [
+      700,
+      1500
+    ]
+  },
+  "corpora": [
+    {
+      "id": "lp_20200428_gaga_infor_vungle_en",
+      "seed": 329503248
+    },
+    {
+      "id": "lp_20201015_clear_sdCard_pangolin_en",
+      "seed": 2063535706
+    },
+    {
+      "id": "zp_drawIt_scratch_adwords_cn",
+      "seed": 1488963359
+    },
+    {
+      "id": "zp_idleGrassCutter_cropper_adwords_en",
+      "seed": 1818534631
+    },
+    {
+      "id": "zp_paperPlane_bomb_adwords_en",
+      "seed": 3680761071
+    },
+    {
+      "id": "zp_popstar_appLovin_en",
+      "seed": 1794325992
+    }
+  ]
+}

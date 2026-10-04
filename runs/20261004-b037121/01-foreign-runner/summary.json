@@ -1,0 +1,65 @@
+{
+  "runId": "20261004-b037121",
+  "corpusRoot": "D:/new-workspace/pu-workbench/oracle-staging/src",
+  "fixtureDir": "D:/new-workspace/chenmai-playable-universal/judge/foreign-runner/fixtures/golden/exit-api",
+  "artifacts": [
+    {
+      "id": "lp_20200428_gaga_infor_vungle_en",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\lp_20200428_gaga_infor_vungle_en.json"
+    },
+    {
+      "id": "lp_20201015_clear_sdCard_pangolin_en",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\lp_20201015_clear_sdCard_pangolin_en.json"
+    },
+    {
+      "id": "zp_drawIt_scratch_adwords_cn",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\zp_drawIt_scratch_adwords_cn.json"
+    },
+    {
+      "id": "zp_idleGrassCutter_cropper_adwords_en",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\zp_idleGrassCutter_cropper_adwords_en.json"
+    },
+    {
+      "id": "zp_paperPlane_bomb_adwords_en",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\zp_paperPlane_bomb_adwords_en.json"
+    },
+    {
+      "id": "zp_popstar_appLovin_en",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\zp_popstar_appLovin_en.json"
+    },
+    {
+      "id": "fx-mraid",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\fx-mraid.json"
+    },
+    {
+      "id": "fx-fbplayable",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\fx-fbplayable.json"
+    },
+    {
+      "id": "fx-exitapi",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\fx-exitapi.json"
+    },
+    {
+      "id": "fx-openappstore",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\fx-openappstore.json"
+    },
+    {
+      "id": "fx-no-exit",
+      "status": "ok",
+      "path": "D:\\new-workspace\\chenmai-playable-universal\\runs\\20261004-b037121\\01-foreign-runner\\flows\\fx-no-exit.json"
+    }
+  ],
+  "passed": 11,
+  "failed": 0,
+  "errors": {}
+}

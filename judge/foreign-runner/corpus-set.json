@@ -1,0 +1,66 @@
+{
+  "version": "v0",
+  "corpus_root": "D:\\new-workspace\\pu-workbench\\oracle-staging\\src",
+  "items": [
+    {
+      "id": "lp_20200428_gaga_infor_vungle_en",
+      "mechanism": "social-story",
+      "form": "html+assets",
+      "external_link": false,
+      "static_exit": "other",
+      "sha256_raw": "c7cfbf37273203d822b7d7327ad7d8d589e2317f705f427a8121b817078cb93a",
+      "source_url": null,
+      "license_status": "pending_legal"
+    },
+    {
+      "id": "lp_20201015_clear_sdCard_pangolin_en",
+      "mechanism": "tool-fake-shop",
+      "form": "html+assets",
+      "external_link": "sf3-ttcdn",
+      "static_exit": ["other", "open_app_store"],
+      "sha256_raw": "b6c941ef09b1d1a2837603f9d92440dbe6ecca8a8c199240a3f73a479952df81",
+      "source_url": null,
+      "license_status": "pending_legal"
+    },
+    {
+      "id": "zp_drawIt_scratch_adwords_cn",
+      "mechanism": "draw-scratch",
+      "form": "selfcontained",
+      "external_link": false,
+      "static_exit": "location-href",
+      "sha256_raw": "6b5c0d2c85d1b9b70b92d230ccc43cec31e35ae8c23bf14c15cbc3bda6a7eb03",
+      "source_url": null,
+      "license_status": "pending_legal"
+    },
+    {
+      "id": "zp_idleGrassCutter_cropper_adwords_en",
+      "mechanism": "idle-sod",
+      "form": "html+assets",
+      "external_link": "s0.2mdn.net",
+      "static_exit": "location-href",
+      "sha256_raw": "c88601433c75f1ea31905b62fa84180d08f39059975db73e061091b4f40c247f",
+      "source_url": null,
+      "license_status": "pending_legal"
+    },
+    {
+      "id": "zp_paperPlane_bomb_adwords_en",
+      "mechanism": "racing-jump",
+      "form": "selfcontained",
+      "external_link": false,
+      "static_exit": "location-href",
+      "sha256_raw": "81e637f96b401b2dd8e6b4c6848345ee79576f822a121f273ff263d5dc75b385",
+      "source_url": null,
+      "license_status": "pending_legal"
+    },
+    {
+      "id": "zp_popstar_appLovin_en",
+      "mechanism": "match3",
+      "form": "html+assets",
+      "external_link": false,
+      "static_exit": "mraid",
+      "sha256_raw": "0b5c0926b8f673cc148bbfcc0b826a83bbe6ea5c514d4e268924d1eecfe5926b",
+      "source_url": null,
+      "license_status": "pending_legal"
+    }
+  ]
+}

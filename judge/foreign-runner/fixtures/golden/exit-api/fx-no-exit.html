@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>fx-no-exit</title></head>
+<body>
+<h1>fx-no-exit</h1>
+<script>
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('status').textContent = 'ready';
+    });
+  });
+</script>
+<p id="status">init</p>
+<script>
+  // Negative control: zero exit calls.
+  document.addEventListener('pointerdown', function first() {
+    document.removeEventListener('pointerdown', first);
+    document.getElementById('status').textContent = 'clicked-no-exit';
+  }, { once: false });
+</script>
+</body>
+</html>

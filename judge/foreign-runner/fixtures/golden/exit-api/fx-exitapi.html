@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>fx-exitapi</title></head>
+<body>
+<h1>fx-exitapi</h1>
+<script>
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('status').textContent = 'ready';
+    });
+  });
+</script>
+<p id="status">init</p>
+<script>
+  document.addEventListener('pointerdown', function first() {
+    document.removeEventListener('pointerdown', first);
+    try {
+      if (typeof window.ExitApi !== 'undefined' && typeof window.ExitApi.exit === 'function') {
+        window.ExitApi.exit();
+      }
+    } catch (e) {}
+  }, { once: false });
+</script>
+</body>
+</html>

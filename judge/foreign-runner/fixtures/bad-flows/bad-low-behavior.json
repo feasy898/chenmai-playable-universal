@@ -1,0 +1,18 @@
+{
+  "schema_version": "v0",
+  "kind": "oracle-runner-flow",
+  "artifact_id": "bad-low-behavior",
+  "input_face": "fixture",
+  "eligible_for_percentile": false,
+  "judge_drive_tier": 2,
+  "drive_mode": "probe-inject",
+  "run_meta": {},
+  "provenance": { "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "fetched_at": "2026-10-04T00:00:00.000Z", "license_status": "pending_legal", "entry_id": "bad-low-behavior", "source_url": "about:blank", "bytes": 0, "sha256_manifest_match": true },
+  "structure": { "bytes": 0, "entry_form": "selfcontained", "self_contained": true, "inline_rate": 0, "external_ref_count": 0, "relative_ref_count": 0, "external_hosts": [], "blocked_external_urls": [], "local_404": 0, "network_policy": "block-external", "websocket_external": [], "exit_api_declared": [], "exit_api_class": [], "engine_hints": [], "has_canvas": false, "webgl_used": false, "url_final_stable": true, "first_frame": { "ok": true, "variance": 0, "blank": false, "reason": "ok" }, "console_error_count": 0, "request_count": 0, "viewport": { "width": 390, "height": 844 }, "nonempty_fields": 8 },
+  "behavior": { "drive_mode": "humanlike-lite-v0", "nonempty_fields": 0 },
+  "exit_api_called": [],
+  "exit_api_hit_counts": { "mraid": 0, "fbplayable": 0, "exitapi": 0, "openappstore": 0 },
+  "exit_api_coverage": { "required": [], "covered": 0, "gap_classes": [], "api_present": { "mraid": false, "FbPlayableAd": false, "ExitApi": false, "openAppStore": false }, "absent_notes": [] },
+  "judge_strategy": { "version": "humanlike-lite-v0", "root_seed": "20261004", "seed": 0, "sha256": "abcd", "params": {} },
+  "content_sha256": null
+}

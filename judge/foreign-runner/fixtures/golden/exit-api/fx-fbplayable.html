@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>fx-fbplayable</title></head>
+<body>
+<h1>fx-fbplayable</h1>
+<script>
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('status').textContent = 'ready';
+    });
+  });
+</script>
+<p id="status">init</p>
+<script>
+  document.addEventListener('pointerdown', function first() {
+    document.removeEventListener('pointerdown', first);
+    try {
+      if (typeof window.FbPlayableAd !== 'undefined') {
+        window.FbPlayableAd.openAppStore && window.FbPlayableAd.openAppStore();
+        window.FbPlayableAd.close && window.FbPlayableAd.close();
+      }
+    } catch (e) {}
+  }, { once: false });
+</script>
+</body>
+</html>
