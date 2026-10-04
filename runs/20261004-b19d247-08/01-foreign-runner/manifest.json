@@ -1,0 +1,63 @@
+{
+  "run_id": "20261004-b19d247-08",
+  "host": "windev-01",
+  "playwright_version": "1.63.0",
+  "git": "b19d247",
+  "flows": [
+    {
+      "id": "lp_20200428_gaga_infor_vungle_en",
+      "path": "flows\\lp_20200428_gaga_infor_vungle_en.json",
+      "sha256": "66e154b30fe32bf0e9a2bbd46302cd60e2ea904c51b46e084915939f55ffd6dd"
+    },
+    {
+      "id": "lp_20201015_clear_sdCard_pangolin_en",
+      "path": "flows\\lp_20201015_clear_sdCard_pangolin_en.json",
+      "sha256": "4383d64e316e1eeb36c5068a9cb8714a756b7f96214cfb8640c7e15e854f22ab"
+    },
+    {
+      "id": "zp_drawIt_scratch_adwords_cn",
+      "path": "flows\\zp_drawIt_scratch_adwords_cn.json",
+      "sha256": "68176f651bfdc91df1ffaa083ae6b326b80558c8c1ff439f9bb5cb4f3682416b"
+    },
+    {
+      "id": "zp_idleGrassCutter_cropper_adwords_en",
+      "path": "flows\\zp_idleGrassCutter_cropper_adwords_en.json",
+      "sha256": "20565708aa08741dbbbf618084a06faa7bac9df8f2865420b76b0f6dfe8c2ff1"
+    },
+    {
+      "id": "zp_paperPlane_bomb_adwords_en",
+      "path": "flows\\zp_paperPlane_bomb_adwords_en.json",
+      "sha256": "44a9a9b0f7710c384b561248326cf2d13296d124568332f6a041feb5b254314d"
+    },
+    {
+      "id": "zp_popstar_appLovin_en",
+      "path": "flows\\zp_popstar_appLovin_en.json",
+      "sha256": "4bccff0dcec484a034fbfc26770ce4ea09b381cd55beac37c526a7dc7a32cbd7"
+    },
+    {
+      "id": "fx-mraid",
+      "path": "flows\\fx-mraid.json",
+      "sha256": "73cf667c945c7d151fbe8642f0bc571a80c0e77f621a0336db8c20e66333cd54"
+    },
+    {
+      "id": "fx-fbplayable",
+      "path": "flows\\fx-fbplayable.json",
+      "sha256": "f084ebc78bad071271b46b3bf16bcb881eb48e87676bbe3462226c3fd2c3762f"
+    },
+    {
+      "id": "fx-exitapi",
+      "path": "flows\\fx-exitapi.json",
+      "sha256": "2047c500ea78ad39a10c222b094fcd6c4ef065e775098c3f3e6d50098d0edaf9"
+    },
+    {
+      "id": "fx-openappstore",
+      "path": "flows\\fx-openappstore.json",
+      "sha256": "55adffe64ccbbe97bd2db04c722a415f6c086b5d7f0aa33314ff63cfe66d837c"
+    },
+    {
+      "id": "fx-no-exit",
+      "path": "flows\\fx-no-exit.json",
+      "sha256": "3e39f2bbc318b10296d5d55a8b40d558e68bfd523b246546de73cfd35d4859db"
+    }
+  ]
+}

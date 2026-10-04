@@ -1,0 +1,544 @@
+{
+  "schema_version": "v0",
+  "kind": "product-flow",
+  "artifact_id": "lp_20201015_clear_sdCard_pangolin_en",
+  "input_face": "corpus",
+  "eligible_for_percentile": true,
+  "judge_drive_tier": 2,
+  "drive_mode": "probe-inject",
+  "t_cta_est": null,
+  "run_meta": {
+    "host": "windev-01",
+    "port": 13081,
+    "git": "present",
+    "playwright_version": "1.63.0",
+    "wall_clock_start_ms": 1791080568919
+  },
+  "provenance": {
+    "sha256": "b6c941ef09b1d1a2837603f9d92440dbe6ecca8a8c199240a3f73a479952df81",
+    "fetched_at": "2026-10-04T02:22:48.919Z",
+    "license_status": "pending_legal",
+    "entry_id": "lp_20201015_clear_sdCard_pangolin_en",
+    "source_url": "oracle-staging://lp_20201015_clear_sdCard_pangolin_en",
+    "bytes": 89920,
+    "sha256_manifest_match": true,
+    "corpus_root": "D:/new-workspace/pu-workbench/oracle-staging/src"
+  },
+  "structure": {
+    "bytes": 89920,
+    "entry_form": "html+assets",
+    "self_contained": false,
+    "inline_rate": 0,
+    "external_ref_count": 1,
+    "relative_ref_count": 1,
+    "external_hosts": [
+      "sf3-ttcdn-tos.pstatp.com"
+    ],
+    "blocked_external_urls": [
+      "https://sf3-ttcdn-tos.pstatp.com/obj/union-fe-nc/playable/sdk/playable-sdk.js"
+    ],
+    "local_404": 0,
+    "network_policy": "block-external",
+    "websocket_external": 0,
+    "exit_api_declared": [],
+    "exit_api_class": [],
+    "engine_hints": [],
+    "has_canvas": false,
+    "webgl_used": false,
+    "url_final_stable": true,
+    "first_frame": {
+      "ok": false,
+      "variance": null,
+      "blank": null,
+      "reason": "pixel sampler deferred to v1"
+    },
+    "console_error_count": 1,
+    "request_count": 2,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "nonempty_fields": 19
+  },
+  "behavior": {
+    "pfEvents": [],
+    "pf_event_count": 0,
+    "gestures": [
+      {
+        "i": 0,
+        "t_ms": 23963,
+        "type": "drag",
+        "x": 302,
+        "y": 243,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 1500,
+        "dwell_ms": 100
+      },
+      {
+        "i": 1,
+        "t_ms": 25545,
+        "type": "tap",
+        "x": 319,
+        "y": 400,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 2,
+        "t_ms": 26269,
+        "type": "tap",
+        "x": 301,
+        "y": 412,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 732,
+        "dwell_ms": 50
+      },
+      {
+        "i": 3,
+        "t_ms": 27012,
+        "type": "tap",
+        "x": 89,
+        "y": 596,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 4,
+        "t_ms": 27733,
+        "type": "tap",
+        "x": 171,
+        "y": 242,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 5,
+        "t_ms": 28448,
+        "type": "tap",
+        "x": 71,
+        "y": 428,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 909,
+        "dwell_ms": 50
+      },
+      {
+        "i": 6,
+        "t_ms": 29373,
+        "type": "tap",
+        "x": 324,
+        "y": 591,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 780,
+        "dwell_ms": 50
+      },
+      {
+        "i": 7,
+        "t_ms": 30160,
+        "type": "drag",
+        "x": 176,
+        "y": 109,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 1115,
+        "dwell_ms": 100
+      },
+      {
+        "i": 8,
+        "t_ms": 31360,
+        "type": "drag",
+        "x": 87,
+        "y": 414,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      },
+      {
+        "i": 9,
+        "t_ms": 32144,
+        "type": "drag",
+        "x": 60,
+        "y": 586,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 1034,
+        "dwell_ms": 100
+      },
+      {
+        "i": 10,
+        "t_ms": 33261,
+        "type": "drag",
+        "x": 313,
+        "y": 404,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      },
+      {
+        "i": 11,
+        "t_ms": 34044,
+        "type": "tap",
+        "x": 198,
+        "y": 269,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 876,
+        "dwell_ms": 50
+      },
+      {
+        "i": 12,
+        "t_ms": 34939,
+        "type": "tap",
+        "x": 212,
+        "y": 582,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 759,
+        "dwell_ms": 50
+      },
+      {
+        "i": 13,
+        "t_ms": 35724,
+        "type": "drag",
+        "x": 317,
+        "y": 780,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      },
+      {
+        "i": 14,
+        "t_ms": 36511,
+        "type": "tap",
+        "x": 184,
+        "y": 752,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 750,
+        "dwell_ms": 50
+      },
+      {
+        "i": 15,
+        "t_ms": 37281,
+        "type": "drag",
+        "x": 338,
+        "y": 107,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      },
+      {
+        "i": 16,
+        "t_ms": 38063,
+        "type": "tap",
+        "x": 43,
+        "y": 254,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 780,
+        "dwell_ms": 50
+      },
+      {
+        "i": 17,
+        "t_ms": 38863,
+        "type": "tap",
+        "x": 182,
+        "y": 436,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      }
+    ],
+    "folded_gestures": [],
+    "gesture_count": 18,
+    "t_first_ms": null,
+    "t_first_screen_ms": null,
+    "input_timeline": {
+      "pointer": [
+        {
+          "t_ms": 23963,
+          "type": "drag",
+          "x": 302,
+          "y": 243,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 1500,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 25545,
+          "type": "tap",
+          "x": 319,
+          "y": 400,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 26269,
+          "type": "tap",
+          "x": 301,
+          "y": 412,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 732,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 27012,
+          "type": "tap",
+          "x": 89,
+          "y": 596,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 27733,
+          "type": "tap",
+          "x": 171,
+          "y": 242,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 28448,
+          "type": "tap",
+          "x": 71,
+          "y": 428,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 909,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 29373,
+          "type": "tap",
+          "x": 324,
+          "y": 591,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 780,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 30160,
+          "type": "drag",
+          "x": 176,
+          "y": 109,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 1115,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 31360,
+          "type": "drag",
+          "x": 87,
+          "y": 414,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 32144,
+          "type": "drag",
+          "x": 60,
+          "y": 586,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 1034,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 33261,
+          "type": "drag",
+          "x": 313,
+          "y": 404,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 34044,
+          "type": "tap",
+          "x": 198,
+          "y": 269,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 876,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 34939,
+          "type": "tap",
+          "x": 212,
+          "y": 582,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 759,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 35724,
+          "type": "drag",
+          "x": 317,
+          "y": 780,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 36511,
+          "type": "tap",
+          "x": 184,
+          "y": 752,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 750,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 37281,
+          "type": "drag",
+          "x": 338,
+          "y": 107,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 38063,
+          "type": "tap",
+          "x": 43,
+          "y": 254,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 780,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 38863,
+          "type": "tap",
+          "x": 182,
+          "y": 436,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        }
+      ],
+      "touch": [],
+      "key": []
+    },
+    "pixel_activity_series": [],
+    "audio": {
+      "created": 0,
+      "running": 0,
+      "everBeforeFirstGesture": false
+    },
+    "media": {
+      "unmuted": 0,
+      "playing": 0,
+      "playsBeforeFirst": 0
+    },
+    "rtc": 0,
+    "finalState": {
+      "reached": false,
+      "t_end_ms": null,
+      "t_loop_est": null,
+      "end_win": null,
+      "screenshot_sha256": null,
+      "final_variance": null,
+      "visible_texts": [
+        "loading",
+        "26 %",
+        "26",
+        "%"
+      ],
+      "text_count": 13
+    },
+    "drive_mode": "probe-inject",
+    "nonempty_fields": 10
+  },
+  "exit_api_called": [],
+  "exit_api_hit_counts": {
+    "mraid": 0,
+    "fbplayable": 0,
+    "exitapi": 0,
+    "openappstore": 0,
+    "implicit_store_nav": 0
+  },
+  "exit_api_coverage": {
+    "required": [
+      "mraid.open",
+      "FbPlayableAd.*",
+      "ExitApi.exit",
+      "openAppStore"
+    ],
+    "covered": 1,
+    "gap_classes": [
+      "mraid",
+      "FbPlayableAd",
+      "ExitApi"
+    ],
+    "api_present": {
+      "mraid": false,
+      "FbPlayableAd": false,
+      "ExitApi": false,
+      "openAppStore": true
+    },
+    "absent_notes": [
+      "mraid_absent",
+      "FbPlayableAd_absent",
+      "ExitApi_absent"
+    ]
+  },
+  "judge_strategy": {
+    "version": "humanlike-lite-v0",
+    "root_seed": "20261005",
+    "seed": 261010149,
+    "sha256": "a53cf574072e70db7495ab8cedf0554bf734e3164ab62b68835df9be31c367e9",
+    "params": {
+      "version": "humanlike-lite-v0",
+      "root_seed": "20261005",
+      "drive_tier": 2,
+      "autoplay_budget_sec": 45,
+      "first_interaction_delay_min_ms": 2500,
+      "gesture_cap": 18,
+      "drag_probability": 0.25,
+      "drag_distance_px": 44,
+      "drag_steps": 4,
+      "interval_ms_min": 700,
+      "interval_ms_max": 1500,
+      "interval_jitter_sigma_ms": 200,
+      "grid_cols": 3,
+      "grid_rows": 5,
+      "jitter_xy_ratio": 0.2,
+      "exit_stop_grace_ms": 3000
+    }
+  },
+  "content_sha256": "79df2310f7452c9737629af818e07dcd18054d5d16cee4384618dd2640cee497"
+}

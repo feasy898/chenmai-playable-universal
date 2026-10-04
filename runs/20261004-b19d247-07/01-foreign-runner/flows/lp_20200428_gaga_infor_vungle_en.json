@@ -1,0 +1,548 @@
+{
+  "schema_version": "v0",
+  "kind": "product-flow",
+  "artifact_id": "lp_20200428_gaga_infor_vungle_en",
+  "input_face": "corpus",
+  "eligible_for_percentile": true,
+  "judge_drive_tier": 2,
+  "drive_mode": "probe-inject",
+  "t_cta_est": null,
+  "run_meta": {
+    "host": "windev-01",
+    "port": 12459,
+    "git": "present",
+    "playwright_version": "1.63.0",
+    "wall_clock_start_ms": 1791080271602
+  },
+  "provenance": {
+    "sha256": "c7cfbf37273203d822b7d7327ad7d8d589e2317f705f427a8121b817078cb93a",
+    "fetched_at": "2026-10-04T02:17:51.602Z",
+    "license_status": "pending_legal",
+    "entry_id": "lp_20200428_gaga_infor_vungle_en",
+    "source_url": "oracle-staging://lp_20200428_gaga_infor_vungle_en",
+    "bytes": 361597,
+    "sha256_manifest_match": true,
+    "corpus_root": "D:/new-workspace/pu-workbench/oracle-staging/src"
+  },
+  "structure": {
+    "bytes": 361597,
+    "entry_form": "html+assets",
+    "self_contained": true,
+    "inline_rate": 0,
+    "external_ref_count": 0,
+    "relative_ref_count": 1,
+    "external_hosts": [],
+    "blocked_external_urls": [],
+    "local_404": 0,
+    "network_policy": "block-external",
+    "websocket_external": 0,
+    "exit_api_declared": [],
+    "exit_api_class": [],
+    "engine_hints": [],
+    "has_canvas": false,
+    "webgl_used": false,
+    "url_final_stable": true,
+    "first_frame": {
+      "ok": false,
+      "variance": null,
+      "blank": null,
+      "reason": "pixel sampler deferred to v1"
+    },
+    "console_error_count": 0,
+    "request_count": 1,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "nonempty_fields": 17
+  },
+  "behavior": {
+    "pfEvents": [],
+    "pf_event_count": 0,
+    "gestures": [
+      {
+        "i": 0,
+        "t_ms": 4753,
+        "type": "tap",
+        "x": 176,
+        "y": 278,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 1500,
+        "dwell_ms": 50
+      },
+      {
+        "i": 1,
+        "t_ms": 6279,
+        "type": "tap",
+        "x": 197,
+        "y": 422,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 710,
+        "dwell_ms": 50
+      },
+      {
+        "i": 2,
+        "t_ms": 7003,
+        "type": "drag",
+        "x": 78,
+        "y": 570,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      },
+      {
+        "i": 3,
+        "t_ms": 7790,
+        "type": "drag",
+        "x": 172,
+        "y": 737,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 711,
+        "dwell_ms": 100
+      },
+      {
+        "i": 4,
+        "t_ms": 8583,
+        "type": "tap",
+        "x": 212,
+        "y": 266,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 837,
+        "dwell_ms": 50
+      },
+      {
+        "i": 5,
+        "t_ms": 9428,
+        "type": "tap",
+        "x": 318,
+        "y": 614,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 6,
+        "t_ms": 10142,
+        "type": "tap",
+        "x": 85,
+        "y": 278,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 7,
+        "t_ms": 10859,
+        "type": "tap",
+        "x": 195,
+        "y": 262,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 8,
+        "t_ms": 11582,
+        "type": "drag",
+        "x": 180,
+        "y": 752,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      },
+      {
+        "i": 9,
+        "t_ms": 12356,
+        "type": "tap",
+        "x": 47,
+        "y": 738,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 751,
+        "dwell_ms": 50
+      },
+      {
+        "i": 10,
+        "t_ms": 13127,
+        "type": "tap",
+        "x": 86,
+        "y": 398,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 804,
+        "dwell_ms": 50
+      },
+      {
+        "i": 11,
+        "t_ms": 13944,
+        "type": "tap",
+        "x": 307,
+        "y": 760,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 12,
+        "t_ms": 14660,
+        "type": "tap",
+        "x": 301,
+        "y": 754,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 821,
+        "dwell_ms": 50
+      },
+      {
+        "i": 13,
+        "t_ms": 15497,
+        "type": "tap",
+        "x": 53,
+        "y": 749,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 865,
+        "dwell_ms": 50
+      },
+      {
+        "i": 14,
+        "t_ms": 16372,
+        "type": "drag",
+        "x": 72,
+        "y": 249,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 702,
+        "dwell_ms": 100
+      },
+      {
+        "i": 15,
+        "t_ms": 17159,
+        "type": "tap",
+        "x": 177,
+        "y": 103,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 933,
+        "dwell_ms": 50
+      },
+      {
+        "i": 16,
+        "t_ms": 18107,
+        "type": "tap",
+        "x": 91,
+        "y": 101,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 813,
+        "dwell_ms": 50
+      },
+      {
+        "i": 17,
+        "t_ms": 18938,
+        "type": "tap",
+        "x": 174,
+        "y": 753,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      }
+    ],
+    "folded_gestures": [],
+    "gesture_count": 18,
+    "t_first_ms": null,
+    "t_first_screen_ms": null,
+    "input_timeline": {
+      "pointer": [
+        {
+          "t_ms": 4753,
+          "type": "tap",
+          "x": 176,
+          "y": 278,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 1500,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 6279,
+          "type": "tap",
+          "x": 197,
+          "y": 422,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 710,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 7003,
+          "type": "drag",
+          "x": 78,
+          "y": 570,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 7790,
+          "type": "drag",
+          "x": 172,
+          "y": 737,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 711,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 8583,
+          "type": "tap",
+          "x": 212,
+          "y": 266,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 837,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 9428,
+          "type": "tap",
+          "x": 318,
+          "y": 614,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 10142,
+          "type": "tap",
+          "x": 85,
+          "y": 278,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 10859,
+          "type": "tap",
+          "x": 195,
+          "y": 262,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 11582,
+          "type": "drag",
+          "x": 180,
+          "y": 752,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 12356,
+          "type": "tap",
+          "x": 47,
+          "y": 738,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 751,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 13127,
+          "type": "tap",
+          "x": 86,
+          "y": 398,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 804,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 13944,
+          "type": "tap",
+          "x": 307,
+          "y": 760,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 14660,
+          "type": "tap",
+          "x": 301,
+          "y": 754,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 821,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 15497,
+          "type": "tap",
+          "x": 53,
+          "y": 749,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 865,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 16372,
+          "type": "drag",
+          "x": 72,
+          "y": 249,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 702,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 17159,
+          "type": "tap",
+          "x": 177,
+          "y": 103,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 933,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 18107,
+          "type": "tap",
+          "x": 91,
+          "y": 101,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 813,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 18938,
+          "type": "tap",
+          "x": 174,
+          "y": 753,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        }
+      ],
+      "touch": [],
+      "key": []
+    },
+    "pixel_activity_series": [],
+    "audio": {
+      "created": 0,
+      "running": 0,
+      "everBeforeFirstGesture": false
+    },
+    "media": {
+      "unmuted": 0,
+      "playing": 0,
+      "playsBeforeFirst": 0
+    },
+    "rtc": 0,
+    "finalState": {
+      "reached": false,
+      "t_end_ms": null,
+      "t_loop_est": null,
+      "end_win": null,
+      "screenshot_sha256": null,
+      "final_variance": null,
+      "visible_texts": [
+        "loading",
+        "Loading...",
+        "Name: NoraAge: 23Distance: 1,3km",
+        "Name: Nora",
+        "Age: 23",
+        "Distance: 1,3km",
+        "Status: SingleInterest: DatingAbout Me: PrettyWechat: Soloni****",
+        "Status: Single",
+        "Interest: Dating",
+        "About Me: Pretty"
+      ],
+      "text_count": 30
+    },
+    "drive_mode": "probe-inject",
+    "nonempty_fields": 10
+  },
+  "exit_api_called": [],
+  "exit_api_hit_counts": {
+    "mraid": 0,
+    "fbplayable": 0,
+    "exitapi": 0,
+    "openappstore": 0,
+    "implicit_store_nav": 0
+  },
+  "exit_api_coverage": {
+    "required": [
+      "mraid.open",
+      "FbPlayableAd.*",
+      "ExitApi.exit",
+      "openAppStore"
+    ],
+    "covered": 0,
+    "gap_classes": [
+      "mraid",
+      "FbPlayableAd",
+      "ExitApi",
+      "openAppStore"
+    ],
+    "api_present": {
+      "mraid": false,
+      "FbPlayableAd": false,
+      "ExitApi": false,
+      "openAppStore": false
+    },
+    "absent_notes": [
+      "mraid_absent",
+      "FbPlayableAd_absent",
+      "ExitApi_absent",
+      "openAppStore_absent"
+    ]
+  },
+  "judge_strategy": {
+    "version": "humanlike-lite-v0",
+    "root_seed": "20261004",
+    "seed": 329503248,
+    "sha256": "4b691c9a160b80be49c76004dd44d30e2e953b4314c6002969047f46cbfd80c2",
+    "params": {
+      "version": "humanlike-lite-v0",
+      "root_seed": "20261004",
+      "drive_tier": 2,
+      "autoplay_budget_sec": 45,
+      "first_interaction_delay_min_ms": 2500,
+      "gesture_cap": 18,
+      "drag_probability": 0.25,
+      "drag_distance_px": 44,
+      "drag_steps": 4,
+      "interval_ms_min": 700,
+      "interval_ms_max": 1500,
+      "interval_jitter_sigma_ms": 200,
+      "grid_cols": 3,
+      "grid_rows": 5,
+      "jitter_xy_ratio": 0.2,
+      "exit_stop_grace_ms": 3000
+    }
+  },
+  "content_sha256": "ce26132fd2e7c6707a5a86fbcf7dc592577df73322dacf946c7d9f4dd9a9f40c"
+}

@@ -1,0 +1,66 @@
+{
+  "run_id": "20261004-b19d247-07",
+  "corpus_root": "D:/new-workspace/pu-workbench/oracle-staging/src",
+  "fixture_dir": "D:\\new-workspace\\chenmai-playable-universal\\judge\\foreign-runner\\fixtures\\golden\\exit-api",
+  "artifacts": [
+    {
+      "id": "lp_20200428_gaga_infor_vungle_en",
+      "status": "ok",
+      "path": "flows\\lp_20200428_gaga_infor_vungle_en.json"
+    },
+    {
+      "id": "lp_20201015_clear_sdCard_pangolin_en",
+      "status": "ok",
+      "path": "flows\\lp_20201015_clear_sdCard_pangolin_en.json"
+    },
+    {
+      "id": "zp_drawIt_scratch_adwords_cn",
+      "status": "ok",
+      "path": "flows\\zp_drawIt_scratch_adwords_cn.json"
+    },
+    {
+      "id": "zp_idleGrassCutter_cropper_adwords_en",
+      "status": "ok",
+      "path": "flows\\zp_idleGrassCutter_cropper_adwords_en.json"
+    },
+    {
+      "id": "zp_paperPlane_bomb_adwords_en",
+      "status": "ok",
+      "path": "flows\\zp_paperPlane_bomb_adwords_en.json"
+    },
+    {
+      "id": "zp_popstar_appLovin_en",
+      "status": "ok",
+      "path": "flows\\zp_popstar_appLovin_en.json"
+    },
+    {
+      "id": "fx-mraid",
+      "status": "ok",
+      "path": "flows\\fx-mraid.json"
+    },
+    {
+      "id": "fx-fbplayable",
+      "status": "ok",
+      "path": "flows\\fx-fbplayable.json"
+    },
+    {
+      "id": "fx-exitapi",
+      "status": "ok",
+      "path": "flows\\fx-exitapi.json"
+    },
+    {
+      "id": "fx-openappstore",
+      "status": "ok",
+      "path": "flows\\fx-openappstore.json"
+    },
+    {
+      "id": "fx-no-exit",
+      "status": "ok",
+      "path": "flows\\fx-no-exit.json"
+    }
+  ],
+  "passed": 11,
+  "failed": 0,
+  "errors": {},
+  "corpus_drift": "0/6"
+}

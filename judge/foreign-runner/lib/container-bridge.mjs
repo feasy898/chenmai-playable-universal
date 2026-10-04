@@ -12,13 +12,35 @@ export function bridgeSource() {
   window.__exit_api_log = window.__exit_api_log || [];
   window.__exit_api_hit_counts = window.__exit_api_hit_counts || { mraid: 0, fbplayable: 0, exitapi: 0, openappstore: 0, implicit_store_nav: 0 };
 
+  // 摘要式：host + fnv1a32(arg)——不落长原文参数（卡面 exit_api_called[].url 口径）
+  function digestUrl(raw) {
+    if (typeof raw !== 'string' || !raw) return null;
+    var host = '';
+    try { host = new URL(raw).host; } catch (e) { host = raw.split('://')[0] || 'raw'; }
+    var h = 2166136261;
+    for (var i = 0; i < raw.length; i++) {
+      h ^= raw.charCodeAt(i);
+      h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0;
+    }
+    return host + '~' + ('00000000' + h.toString(16)).slice(-8);
+  }
+
   function record(cls, api, detail) {
+    var args = (detail && detail.args) || [];
+    var target = null;
+    for (var i = 0; i < args.length; i++) {
+      var s0 = args[i];
+      if (typeof s0 !== 'string') continue;
+      // 注意：本函数体内是 Node 模板字符串，\/ 会被折叠成 / 从而毁掉正则字面量；
+      // 故此处不用含反斜杠斜杠的正则，改用 exec + charAt 组合。
+      if (/^([a-z][a-z0-9+.-]*:)/.exec(s0) || s0.charAt(0) === '/') { target = s0; break; }
+    }
     window.__exit_api_log.push({
       api: api,
       cls: cls,
       t_ms: performance.now(),
-      url: window.location.href,
-      arg_count: detail ? (detail.args ? detail.args.length : 0) : 0,
+      url: digestUrl(target),
+      arg_count: args.length,
       suppressed_navigation: true,
       provenance: 'fixture'
     });

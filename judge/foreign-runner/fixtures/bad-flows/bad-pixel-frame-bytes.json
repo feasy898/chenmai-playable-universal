@@ -4,7 +4,7 @@
   "artifact_id": "fx-mraid",
   "input_face": "fixture",
   "eligible_for_percentile": false,
-  "judge_drive_tier": 1,
+  "judge_drive_tier": 2,
   "drive_mode": "probe-inject",
   "t_cta_est": null,
   "run_meta": {
@@ -95,7 +95,20 @@
       "touch": [],
       "key": []
     },
-    "pixel_activity_series": [],
+    "pixel_activity_series": [
+      {
+        "t_ms": 10,
+        "grid": "64x64",
+        "changed_cells": 1,
+        "mean_abs_diff": 0.1,
+        "frame_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "frame_bytes": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
     "audio": {
       "created": 0,
       "running": 0,
@@ -127,7 +140,7 @@
       "text_count": 8
     },
     "drive_mode": "humanlike-lite-v0",
-    "nonempty_fields": 10
+    "nonempty_fields": 11
   },
   "exit_api_called": [],
   "exit_api_hit_counts": {
@@ -150,5 +163,5 @@
     "seed": 1,
     "params": {}
   },
-  "content_sha256": "b1e40cd15436484b6d66c8d523bb70cd9d94b9916f518fb6be1cb226cd93b074"
+  "content_sha256": "e0c3e6e399443f36ef8648e53bd3d4184f64dbad3317b3c2c13f286bd66d3e24"
 }

@@ -1,0 +1,550 @@
+{
+  "schema_version": "v0",
+  "kind": "product-flow",
+  "artifact_id": "zp_idleGrassCutter_cropper_adwords_en",
+  "input_face": "corpus",
+  "eligible_for_percentile": true,
+  "judge_drive_tier": 2,
+  "drive_mode": "probe-inject",
+  "t_cta_est": null,
+  "run_meta": {
+    "host": "windev-01",
+    "port": 13189,
+    "git": "present",
+    "playwright_version": "1.63.0",
+    "wall_clock_start_ms": 1791080607171
+  },
+  "provenance": {
+    "sha256": "c88601433c75f1ea31905b62fa84180d08f39059975db73e061091b4f40c247f",
+    "fetched_at": "2026-10-04T02:23:27.171Z",
+    "license_status": "pending_legal",
+    "entry_id": "zp_idleGrassCutter_cropper_adwords_en",
+    "source_url": "oracle-staging://zp_idleGrassCutter_cropper_adwords_en",
+    "bytes": 870304,
+    "sha256_manifest_match": true,
+    "corpus_root": "D:/new-workspace/pu-workbench/oracle-staging/src"
+  },
+  "structure": {
+    "bytes": 870304,
+    "entry_form": "html+assets",
+    "self_contained": false,
+    "inline_rate": 0,
+    "external_ref_count": 2,
+    "relative_ref_count": 1,
+    "external_hosts": [
+      "s0.2mdn.net"
+    ],
+    "blocked_external_urls": [
+      "https://s0.2mdn.net/ads/studio/cached_libs/easeljs_0.8.1_58add2e69ca7fbe25e8f82a2b5f6a510_min.js",
+      "https://s0.2mdn.net/ads/studio/cached_libs/tweenjs_0.6.1_40840f08e9fb382ae9e4a337da542ed5_min.js"
+    ],
+    "local_404": 0,
+    "network_policy": "block-external",
+    "websocket_external": 0,
+    "exit_api_declared": [],
+    "exit_api_class": [],
+    "engine_hints": [],
+    "has_canvas": true,
+    "webgl_used": false,
+    "url_final_stable": true,
+    "first_frame": {
+      "ok": false,
+      "variance": null,
+      "blank": null,
+      "reason": "pixel sampler deferred to v1"
+    },
+    "console_error_count": 2,
+    "request_count": 3,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "nonempty_fields": 19
+  },
+  "behavior": {
+    "pfEvents": [],
+    "pf_event_count": 0,
+    "gestures": [
+      {
+        "i": 0,
+        "t_ms": 62661,
+        "type": "tap",
+        "x": 68,
+        "y": 581,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 1500,
+        "dwell_ms": 50
+      },
+      {
+        "i": 1,
+        "t_ms": 64172,
+        "type": "tap",
+        "x": 50,
+        "y": 613,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 2,
+        "t_ms": 64887,
+        "type": "tap",
+        "x": 315,
+        "y": 426,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 3,
+        "t_ms": 65604,
+        "type": "tap",
+        "x": 88,
+        "y": 99,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 714,
+        "dwell_ms": 50
+      },
+      {
+        "i": 4,
+        "t_ms": 66338,
+        "type": "drag",
+        "x": 171,
+        "y": 773,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 710,
+        "dwell_ms": 100
+      },
+      {
+        "i": 5,
+        "t_ms": 67130,
+        "type": "drag",
+        "x": 207,
+        "y": 610,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      },
+      {
+        "i": 6,
+        "t_ms": 67918,
+        "type": "drag",
+        "x": 337,
+        "y": 258,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 783,
+        "dwell_ms": 100
+      },
+      {
+        "i": 7,
+        "t_ms": 68784,
+        "type": "tap",
+        "x": 210,
+        "y": 751,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 1051,
+        "dwell_ms": 50
+      },
+      {
+        "i": 8,
+        "t_ms": 69856,
+        "type": "drag",
+        "x": 215,
+        "y": 743,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 788,
+        "dwell_ms": 100
+      },
+      {
+        "i": 9,
+        "t_ms": 70724,
+        "type": "tap",
+        "x": 43,
+        "y": 770,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 10,
+        "t_ms": 71438,
+        "type": "tap",
+        "x": 64,
+        "y": 268,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 732,
+        "dwell_ms": 50
+      },
+      {
+        "i": 11,
+        "t_ms": 72186,
+        "type": "tap",
+        "x": 52,
+        "y": 257,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 12,
+        "t_ms": 72904,
+        "type": "tap",
+        "x": 86,
+        "y": 79,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 13,
+        "t_ms": 73623,
+        "type": "tap",
+        "x": 63,
+        "y": 580,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 946,
+        "dwell_ms": 50
+      },
+      {
+        "i": 14,
+        "t_ms": 74584,
+        "type": "tap",
+        "x": 314,
+        "y": 271,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 15,
+        "t_ms": 75306,
+        "type": "drag",
+        "x": 196,
+        "y": 67,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 834,
+        "dwell_ms": 100
+      },
+      {
+        "i": 16,
+        "t_ms": 76219,
+        "type": "tap",
+        "x": 336,
+        "y": 419,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 825,
+        "dwell_ms": 50
+      },
+      {
+        "i": 17,
+        "t_ms": 77062,
+        "type": "tap",
+        "x": 341,
+        "y": 750,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 717,
+        "dwell_ms": 50
+      }
+    ],
+    "folded_gestures": [],
+    "gesture_count": 18,
+    "t_first_ms": null,
+    "t_first_screen_ms": null,
+    "input_timeline": {
+      "pointer": [
+        {
+          "t_ms": 62661,
+          "type": "tap",
+          "x": 68,
+          "y": 581,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 1500,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 64172,
+          "type": "tap",
+          "x": 50,
+          "y": 613,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 64887,
+          "type": "tap",
+          "x": 315,
+          "y": 426,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 65604,
+          "type": "tap",
+          "x": 88,
+          "y": 99,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 714,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 66338,
+          "type": "drag",
+          "x": 171,
+          "y": 773,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 710,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 67130,
+          "type": "drag",
+          "x": 207,
+          "y": 610,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 67918,
+          "type": "drag",
+          "x": 337,
+          "y": 258,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 783,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 68784,
+          "type": "tap",
+          "x": 210,
+          "y": 751,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 1051,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 69856,
+          "type": "drag",
+          "x": 215,
+          "y": 743,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 788,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 70724,
+          "type": "tap",
+          "x": 43,
+          "y": 770,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 71438,
+          "type": "tap",
+          "x": 64,
+          "y": 268,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 732,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 72186,
+          "type": "tap",
+          "x": 52,
+          "y": 257,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 72904,
+          "type": "tap",
+          "x": 86,
+          "y": 79,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 73623,
+          "type": "tap",
+          "x": 63,
+          "y": 580,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 946,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 74584,
+          "type": "tap",
+          "x": 314,
+          "y": 271,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 75306,
+          "type": "drag",
+          "x": 196,
+          "y": 67,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 834,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 76219,
+          "type": "tap",
+          "x": 336,
+          "y": 419,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 825,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 77062,
+          "type": "tap",
+          "x": 341,
+          "y": 750,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 717,
+          "dwell_ms": 50
+        }
+      ],
+      "touch": [],
+      "key": []
+    },
+    "pixel_activity_series": [],
+    "audio": {
+      "created": 0,
+      "running": 0,
+      "everBeforeFirstGesture": false
+    },
+    "media": {
+      "unmuted": 0,
+      "playing": 0,
+      "playsBeforeFirst": 0
+    },
+    "rtc": 0,
+    "finalState": {
+      "reached": false,
+      "t_end_ms": null,
+      "t_loop_est": null,
+      "end_win": null,
+      "screenshot_sha256": null,
+      "final_variance": null,
+      "visible_texts": [
+        "loading",
+        "Control the mower and mow!0   Install NowIdle Grass Cutter",
+        "Control the mower and mow!0   Install Now",
+        "Control the mower and mow!",
+        "0",
+        "Install Now",
+        "Idle Grass Cutter"
+      ],
+      "text_count": 23
+    },
+    "drive_mode": "probe-inject",
+    "nonempty_fields": 10
+  },
+  "exit_api_called": [],
+  "exit_api_hit_counts": {
+    "mraid": 0,
+    "fbplayable": 0,
+    "exitapi": 0,
+    "openappstore": 0,
+    "implicit_store_nav": 0
+  },
+  "exit_api_coverage": {
+    "required": [
+      "mraid.open",
+      "FbPlayableAd.*",
+      "ExitApi.exit",
+      "openAppStore"
+    ],
+    "covered": 0,
+    "gap_classes": [
+      "mraid",
+      "FbPlayableAd",
+      "ExitApi",
+      "openAppStore"
+    ],
+    "api_present": {
+      "mraid": false,
+      "FbPlayableAd": false,
+      "ExitApi": false,
+      "openAppStore": false
+    },
+    "absent_notes": [
+      "mraid_absent",
+      "FbPlayableAd_absent",
+      "ExitApi_absent",
+      "openAppStore_absent"
+    ]
+  },
+  "judge_strategy": {
+    "version": "humanlike-lite-v0",
+    "root_seed": "20261005",
+    "seed": 1382037993,
+    "sha256": "a53cf574072e70db7495ab8cedf0554bf734e3164ab62b68835df9be31c367e9",
+    "params": {
+      "version": "humanlike-lite-v0",
+      "root_seed": "20261005",
+      "drive_tier": 2,
+      "autoplay_budget_sec": 45,
+      "first_interaction_delay_min_ms": 2500,
+      "gesture_cap": 18,
+      "drag_probability": 0.25,
+      "drag_distance_px": 44,
+      "drag_steps": 4,
+      "interval_ms_min": 700,
+      "interval_ms_max": 1500,
+      "interval_jitter_sigma_ms": 200,
+      "grid_cols": 3,
+      "grid_rows": 5,
+      "jitter_xy_ratio": 0.2,
+      "exit_stop_grace_ms": 3000
+    }
+  },
+  "content_sha256": "153d4564fd139ed07c55c6bfcf8d412b94013354bb9cc185f570fa93aa2fbb11"
+}

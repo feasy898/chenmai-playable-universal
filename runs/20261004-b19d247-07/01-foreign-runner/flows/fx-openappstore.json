@@ -1,0 +1,187 @@
+{
+  "schema_version": "v0",
+  "kind": "oracle-runner-flow",
+  "artifact_id": "fx-openappstore",
+  "input_face": "fixture",
+  "eligible_for_percentile": false,
+  "judge_drive_tier": 2,
+  "drive_mode": "probe-inject",
+  "t_cta_est": null,
+  "run_meta": {
+    "host": "windev-01",
+    "port": 12653,
+    "git": "present",
+    "playwright_version": "1.63.0",
+    "wall_clock_start_ms": 1791080385925
+  },
+  "provenance": {
+    "sha256": "02638a03c469a17549a3abdeb32fe4af247408c63a91f398b1c4ed0f60638cfc",
+    "fetched_at": "2026-10-04T02:19:45.925Z",
+    "license_status": "self-authored",
+    "entry_id": "fx-openappstore",
+    "source_url": "fixture://exit-api/fx-openappstore",
+    "bytes": 616,
+    "sha256_manifest_match": null,
+    "corpus_root": null
+  },
+  "structure": {
+    "bytes": 616,
+    "entry_form": "selfcontained",
+    "self_contained": true,
+    "inline_rate": 0,
+    "external_ref_count": 0,
+    "relative_ref_count": 1,
+    "external_hosts": [],
+    "blocked_external_urls": [],
+    "local_404": 0,
+    "network_policy": "block-external",
+    "websocket_external": 0,
+    "exit_api_declared": [
+      "openAppStore"
+    ],
+    "exit_api_class": [
+      "openappstore"
+    ],
+    "engine_hints": [],
+    "has_canvas": false,
+    "webgl_used": false,
+    "url_final_stable": true,
+    "first_frame": {
+      "ok": false,
+      "variance": null,
+      "blank": null,
+      "reason": "pixel sampler deferred to v1"
+    },
+    "console_error_count": 0,
+    "request_count": 1,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "nonempty_fields": 19
+  },
+  "behavior": {
+    "pfEvents": [],
+    "pf_event_count": 0,
+    "gestures": [
+      {
+        "i": 0,
+        "t_ms": 134087,
+        "type": "tap",
+        "x": 195,
+        "y": 422,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 0,
+        "dwell_ms": 50
+      }
+    ],
+    "folded_gestures": [],
+    "gesture_count": 1,
+    "t_first_ms": null,
+    "t_first_screen_ms": null,
+    "input_timeline": {
+      "pointer": [
+        {
+          "t_ms": 134087,
+          "type": "tap",
+          "x": 195,
+          "y": 422,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 0,
+          "dwell_ms": 50
+        }
+      ],
+      "touch": [],
+      "key": []
+    },
+    "pixel_activity_series": [],
+    "audio": {
+      "created": 0,
+      "running": 0,
+      "everBeforeFirstGesture": false
+    },
+    "media": {
+      "unmuted": 0,
+      "playing": 0,
+      "playsBeforeFirst": 0
+    },
+    "rtc": 0,
+    "finalState": {
+      "reached": false,
+      "t_end_ms": null,
+      "t_loop_est": null,
+      "end_win": null,
+      "screenshot_sha256": null,
+      "final_variance": null,
+      "visible_texts": [
+        "fx-openappstore",
+        "ready"
+      ],
+      "text_count": 4
+    },
+    "drive_mode": "probe-inject",
+    "nonempty_fields": 10
+  },
+  "exit_api_called": [
+    {
+      "api": "openAppStore",
+      "cls": "openappstore",
+      "t_ms": 2917,
+      "url": null,
+      "arg_count": 0,
+      "suppressed_navigation": true,
+      "provenance": "fixture"
+    }
+  ],
+  "exit_api_hit_counts": {
+    "mraid": 0,
+    "fbplayable": 0,
+    "exitapi": 0,
+    "openappstore": 1,
+    "implicit_store_nav": 0
+  },
+  "exit_api_coverage": {
+    "required": [
+      "mraid.open",
+      "FbPlayableAd.*",
+      "ExitApi.exit",
+      "openAppStore"
+    ],
+    "covered": 4,
+    "gap_classes": [],
+    "api_present": {
+      "mraid": true,
+      "FbPlayableAd": true,
+      "ExitApi": true,
+      "openAppStore": true
+    },
+    "absent_notes": []
+  },
+  "judge_strategy": {
+    "version": "humanlike-lite-v0",
+    "root_seed": "20261004",
+    "seed": 0,
+    "sha256": "4b691c9a160b80be49c76004dd44d30e2e953b4314c6002969047f46cbfd80c2",
+    "params": {
+      "version": "humanlike-lite-v0",
+      "root_seed": "20261004",
+      "drive_tier": 2,
+      "autoplay_budget_sec": 45,
+      "first_interaction_delay_min_ms": 2500,
+      "gesture_cap": 18,
+      "drag_probability": 0.25,
+      "drag_distance_px": 44,
+      "drag_steps": 4,
+      "interval_ms_min": 700,
+      "interval_ms_max": 1500,
+      "interval_jitter_sigma_ms": 200,
+      "grid_cols": 3,
+      "grid_rows": 5,
+      "jitter_xy_ratio": 0.2,
+      "exit_stop_grace_ms": 3000
+    }
+  },
+  "content_sha256": "3c68c621283b5b89b3e2ca96397b895d65b84a9b64f6cfb9af23aefd3a26f764"
+}

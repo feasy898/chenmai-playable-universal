@@ -1,0 +1,561 @@
+{
+  "schema_version": "v0",
+  "kind": "product-flow",
+  "artifact_id": "zp_popstar_appLovin_en",
+  "input_face": "corpus",
+  "eligible_for_percentile": true,
+  "judge_drive_tier": 2,
+  "drive_mode": "probe-inject",
+  "t_cta_est": null,
+  "run_meta": {
+    "host": "windev-01",
+    "port": 12545,
+    "git": "present",
+    "playwright_version": "1.63.0",
+    "wall_clock_start_ms": 1791080371196
+  },
+  "provenance": {
+    "sha256": "0b5c0926b8f673cc148bbfcc0b826a83bbe6ea5c514d4e268924d1eecfe5926b",
+    "fetched_at": "2026-10-04T02:19:31.196Z",
+    "license_status": "pending_legal",
+    "entry_id": "zp_popstar_appLovin_en",
+    "source_url": "oracle-staging://zp_popstar_appLovin_en",
+    "bytes": 1211976,
+    "sha256_manifest_match": true,
+    "corpus_root": "D:/new-workspace/pu-workbench/oracle-staging/src"
+  },
+  "structure": {
+    "bytes": 1211976,
+    "entry_form": "html+assets",
+    "self_contained": true,
+    "inline_rate": 0,
+    "external_ref_count": 0,
+    "relative_ref_count": 1,
+    "external_hosts": [],
+    "blocked_external_urls": [],
+    "local_404": 0,
+    "network_policy": "block-external",
+    "websocket_external": 0,
+    "exit_api_declared": [
+      "mraid.open"
+    ],
+    "exit_api_class": [
+      "mraid"
+    ],
+    "engine_hints": [],
+    "has_canvas": true,
+    "webgl_used": false,
+    "url_final_stable": true,
+    "first_frame": {
+      "ok": false,
+      "variance": null,
+      "blank": null,
+      "reason": "pixel sampler deferred to v1"
+    },
+    "console_error_count": 0,
+    "request_count": 1,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "nonempty_fields": 19
+  },
+  "behavior": {
+    "pfEvents": [],
+    "pf_event_count": 0,
+    "gestures": [
+      {
+        "i": 0,
+        "t_ms": 103124,
+        "type": "tap",
+        "x": 42,
+        "y": 574,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 1393,
+        "dwell_ms": 50
+      },
+      {
+        "i": 1,
+        "t_ms": 104565,
+        "type": "tap",
+        "x": 173,
+        "y": 439,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 2,
+        "t_ms": 105311,
+        "type": "tap",
+        "x": 344,
+        "y": 776,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 972,
+        "dwell_ms": 50
+      },
+      {
+        "i": 3,
+        "t_ms": 106314,
+        "type": "tap",
+        "x": 324,
+        "y": 259,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 759,
+        "dwell_ms": 50
+      },
+      {
+        "i": 4,
+        "t_ms": 107095,
+        "type": "tap",
+        "x": 68,
+        "y": 234,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 5,
+        "t_ms": 107819,
+        "type": "tap",
+        "x": 59,
+        "y": 61,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 951,
+        "dwell_ms": 50
+      },
+      {
+        "i": 6,
+        "t_ms": 108804,
+        "type": "tap",
+        "x": 336,
+        "y": 425,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 7,
+        "t_ms": 109539,
+        "type": "tap",
+        "x": 299,
+        "y": 737,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 821,
+        "dwell_ms": 50
+      },
+      {
+        "i": 8,
+        "t_ms": 110406,
+        "type": "tap",
+        "x": 349,
+        "y": 760,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 50
+      },
+      {
+        "i": 9,
+        "t_ms": 111136,
+        "type": "tap",
+        "x": 178,
+        "y": 262,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 783,
+        "dwell_ms": 50
+      },
+      {
+        "i": 10,
+        "t_ms": 111953,
+        "type": "tap",
+        "x": 69,
+        "y": 583,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 1015,
+        "dwell_ms": 50
+      },
+      {
+        "i": 11,
+        "t_ms": 113017,
+        "type": "tap",
+        "x": 184,
+        "y": 269,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 885,
+        "dwell_ms": 50
+      },
+      {
+        "i": 12,
+        "t_ms": 113920,
+        "type": "drag",
+        "x": 206,
+        "y": 266,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 725,
+        "dwell_ms": 100
+      },
+      {
+        "i": 13,
+        "t_ms": 114732,
+        "type": "tap",
+        "x": 176,
+        "y": 765,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 820,
+        "dwell_ms": 50
+      },
+      {
+        "i": 14,
+        "t_ms": 115571,
+        "type": "drag",
+        "x": 214,
+        "y": 575,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 912,
+        "dwell_ms": 100
+      },
+      {
+        "i": 15,
+        "t_ms": 116568,
+        "type": "drag",
+        "x": 82,
+        "y": 759,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 989,
+        "dwell_ms": 100
+      },
+      {
+        "i": 16,
+        "t_ms": 117626,
+        "type": "tap",
+        "x": 220,
+        "y": 782,
+        "dx": 0,
+        "dy": 0,
+        "delay_ms": 893,
+        "dwell_ms": 50
+      },
+      {
+        "i": 17,
+        "t_ms": 118544,
+        "type": "drag",
+        "x": 330,
+        "y": 785,
+        "dx": 44,
+        "dy": 0,
+        "delay_ms": 700,
+        "dwell_ms": 100
+      }
+    ],
+    "folded_gestures": [],
+    "gesture_count": 18,
+    "t_first_ms": null,
+    "t_first_screen_ms": null,
+    "input_timeline": {
+      "pointer": [
+        {
+          "t_ms": 103124,
+          "type": "tap",
+          "x": 42,
+          "y": 574,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 1393,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 104565,
+          "type": "tap",
+          "x": 173,
+          "y": 439,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 105311,
+          "type": "tap",
+          "x": 344,
+          "y": 776,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 972,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 106314,
+          "type": "tap",
+          "x": 324,
+          "y": 259,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 759,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 107095,
+          "type": "tap",
+          "x": 68,
+          "y": 234,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 107819,
+          "type": "tap",
+          "x": 59,
+          "y": 61,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 951,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 108804,
+          "type": "tap",
+          "x": 336,
+          "y": 425,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 109539,
+          "type": "tap",
+          "x": 299,
+          "y": 737,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 821,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 110406,
+          "type": "tap",
+          "x": 349,
+          "y": 760,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 111136,
+          "type": "tap",
+          "x": 178,
+          "y": 262,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 783,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 111953,
+          "type": "tap",
+          "x": 69,
+          "y": 583,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 1015,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 113017,
+          "type": "tap",
+          "x": 184,
+          "y": 269,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 885,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 113920,
+          "type": "drag",
+          "x": 206,
+          "y": 266,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 725,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 114732,
+          "type": "tap",
+          "x": 176,
+          "y": 765,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 820,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 115571,
+          "type": "drag",
+          "x": 214,
+          "y": 575,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 912,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 116568,
+          "type": "drag",
+          "x": 82,
+          "y": 759,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 989,
+          "dwell_ms": 100
+        },
+        {
+          "t_ms": 117626,
+          "type": "tap",
+          "x": 220,
+          "y": 782,
+          "dx": 0,
+          "dy": 0,
+          "delay_ms": 893,
+          "dwell_ms": 50
+        },
+        {
+          "t_ms": 118544,
+          "type": "drag",
+          "x": 330,
+          "y": 785,
+          "dx": 44,
+          "dy": 0,
+          "delay_ms": 700,
+          "dwell_ms": 100
+        }
+      ],
+      "touch": [],
+      "key": []
+    },
+    "pixel_activity_series": [],
+    "audio": {
+      "created": 0,
+      "running": 0,
+      "everBeforeFirstGesture": false
+    },
+    "media": {
+      "unmuted": 0,
+      "playing": 0,
+      "playsBeforeFirst": 0
+    },
+    "rtc": 0,
+    "finalState": {
+      "reached": false,
+      "t_end_ms": null,
+      "t_loop_est": null,
+      "end_win": null,
+      "screenshot_sha256": null,
+      "final_variance": null,
+      "visible_texts": [
+        "loading",
+        "TAP TO START"
+      ],
+      "text_count": 11
+    },
+    "drive_mode": "probe-inject",
+    "nonempty_fields": 10
+  },
+  "exit_api_called": [
+    {
+      "api": "mraid.open",
+      "cls": "mraid",
+      "t_ms": 5499,
+      "url": "itunes.apple.com~ec58ed60",
+      "arg_count": 1,
+      "suppressed_navigation": true,
+      "provenance": "corpus"
+    },
+    {
+      "api": "mraid.open",
+      "cls": "mraid",
+      "t_ms": 17809,
+      "url": "itunes.apple.com~ec58ed60",
+      "arg_count": 1,
+      "suppressed_navigation": true,
+      "provenance": "corpus"
+    }
+  ],
+  "exit_api_hit_counts": {
+    "mraid": 2,
+    "fbplayable": 0,
+    "exitapi": 0,
+    "openappstore": 0,
+    "implicit_store_nav": 0
+  },
+  "exit_api_coverage": {
+    "required": [
+      "mraid.open",
+      "FbPlayableAd.*",
+      "ExitApi.exit",
+      "openAppStore"
+    ],
+    "covered": 1,
+    "gap_classes": [
+      "FbPlayableAd",
+      "ExitApi",
+      "openAppStore"
+    ],
+    "api_present": {
+      "mraid": true,
+      "FbPlayableAd": false,
+      "ExitApi": false,
+      "openAppStore": false
+    },
+    "absent_notes": [
+      "FbPlayableAd_absent",
+      "ExitApi_absent",
+      "openAppStore_absent"
+    ]
+  },
+  "judge_strategy": {
+    "version": "humanlike-lite-v0",
+    "root_seed": "20261004",
+    "seed": 1794325992,
+    "sha256": "4b691c9a160b80be49c76004dd44d30e2e953b4314c6002969047f46cbfd80c2",
+    "params": {
+      "version": "humanlike-lite-v0",
+      "root_seed": "20261004",
+      "drive_tier": 2,
+      "autoplay_budget_sec": 45,
+      "first_interaction_delay_min_ms": 2500,
+      "gesture_cap": 18,
+      "drag_probability": 0.25,
+      "drag_distance_px": 44,
+      "drag_steps": 4,
+      "interval_ms_min": 700,
+      "interval_ms_max": 1500,
+      "interval_jitter_sigma_ms": 200,
+      "grid_cols": 3,
+      "grid_rows": 5,
+      "jitter_xy_ratio": 0.2,
+      "exit_stop_grace_ms": 3000
+    }
+  },
+  "content_sha256": "b27a72a7b5b64207038881fbdc6800829c1d71d1454527110ee64ddb447fbb2f"
+}

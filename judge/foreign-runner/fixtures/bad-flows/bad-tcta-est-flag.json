@@ -4,7 +4,7 @@
   "artifact_id": "fx-mraid",
   "input_face": "fixture",
   "eligible_for_percentile": false,
-  "judge_drive_tier": 1,
+  "judge_drive_tier": 2,
   "drive_mode": "probe-inject",
   "t_cta_est": null,
   "run_meta": {
@@ -124,7 +124,8 @@
         "ready",
         "\n  document.addEventListener('pointerdown', function first() {\n    document.removeEventListener('pointerdown', first);\n    try {\n      if (typeof window.mraid !== 'undefined' && typeof window.mraid.open === 'function') {\n        window.mraid.open('market://detail?id=example');\n      }\n    } catch (e) {}\n  }, { once: false });\n"
       ],
-      "text_count": 8
+      "text_count": 8,
+      "t_cta_est": 1234
     },
     "drive_mode": "humanlike-lite-v0",
     "nonempty_fields": 10
@@ -150,5 +151,5 @@
     "seed": 1,
     "params": {}
   },
-  "content_sha256": "b1e40cd15436484b6d66c8d523bb70cd9d94b9916f518fb6be1cb226cd93b074"
+  "content_sha256": "a7cd5d697a9c9a4b77cd3796f9bbb406fe4f78baa453e5117f80c7f5ee5f20c6"
 }

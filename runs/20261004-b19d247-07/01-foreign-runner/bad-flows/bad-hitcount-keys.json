@@ -4,7 +4,7 @@
   "artifact_id": "fx-mraid",
   "input_face": "fixture",
   "eligible_for_percentile": false,
-  "judge_drive_tier": 1,
+  "judge_drive_tier": 2,
   "drive_mode": "probe-inject",
   "t_cta_est": null,
   "run_meta": {
@@ -135,7 +135,8 @@
     "fbplayable": 0,
     "exitapi": 0,
     "openappstore": 0,
-    "implicit_store_nav": 0
+    "implicit_store_nav": 0,
+    "tradex": 0
   },
   "exit_api_coverage": {
     "required": [],
@@ -150,5 +151,5 @@
     "seed": 1,
     "params": {}
   },
-  "content_sha256": "b1e40cd15436484b6d66c8d523bb70cd9d94b9916f518fb6be1cb226cd93b074"
+  "content_sha256": "9120a39d75012c0facbd1ba7f274a7a1d4ca00eed4a32f5dfde486f8d3367655"
 }
