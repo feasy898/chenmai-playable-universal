@@ -199,16 +199,37 @@ export async function cmdVerify({ runDir }) {
     freezeOk = recomputed === freeze.sha256 && inFlow === freeze.sha256;
   }
 
+  // F1：夹具面四类各 ≥1 命中，阴性夹具零假阳。
+  // 之所以机器断言：桥侧一次静默失效会让四类计数无声归零，而 flows_ok 仍是 11/11。
+  const POS = ["mraid", "fbplayable", "exitapi", "openappstore"];
+  const posHits = Object.fromEntries(POS.map(k => [k, 0]));
+  let negCalled = -1, negAnyHit = false, fixturesSeen = 0;
+  for (const entry of manifest.flows) {
+    const flow = JSON.parse(readFileSync(join(runDir, entry.path), "utf8"));
+    if (flow.input_face !== "fixture") continue;
+    fixturesSeen += 1;
+    for (const k of POS) if ((flow.exit_api_hit_counts[k] || 0) > 0) posHits[k] += 1;
+    if (entry.id === "fx-no-exit") {
+      negCalled = (flow.exit_api_called || []).length;
+      negAnyHit = POS.some(k => (flow.exit_api_hit_counts[k] || 0) > 0);
+    }
+  }
+  const f1Missing = POS.filter(k => posHits[k] < 1);
+
   console.log(`[verify] flows_ok=${passed}/${manifest.flows.length}`);
   console.log(`[verify] bad_flows_rejected=${badRejected}/${badTotal}`);
   console.log(`[verify] content_sha256_recompute_mismatch=${digestMismatches.length}`);
   console.log(`[verify] nonempty_under_8=${nonemptyUnder.length}`);
   console.log(`[verify] strategy_freeze_three_way=${freezeOk ? "match" : "MISMATCH"}`);
+  console.log(`[verify] f1_fixture_hits=${JSON.stringify(posHits)} negative_called=${negCalled}`);
+  if (f1Missing.length) console.error(`[verify] F1 RED: no positive fixture hit for ${f1Missing.join(", ")}`);
+  if (negCalled !== 0 || negAnyHit) console.error(`[verify] F1 RED: negative fixture produced exits (called=${negCalled})`);
   if (badEscaped.length) console.error(`[verify] ESCAPED bad flows: ${badEscaped.join(", ")}`);
   console.log(`[verify] ${passed} passed / ${failed} failed`);
 
   const red = failed > 0 || badEscaped.length > 0 || digestMismatches.length > 0 ||
-              nonemptyUnder.length > 0 || !freezeOk || badTotal !== 5 || badRejected !== 5;
+              nonemptyUnder.length > 0 || !freezeOk || badTotal !== 5 || badRejected !== 5 ||
+              fixturesSeen !== 5 || f1Missing.length > 0 || negCalled !== 0 || negAnyHit;
   if (red) process.exit(1);
 }
 
