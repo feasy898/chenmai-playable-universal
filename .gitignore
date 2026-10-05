@@ -12,6 +12,7 @@
 !/.gitignore
 !/.gitattributes
 !/README.md
+!/INTENT.md
 
 # --- 常量表（U-06：待拍板阈值集中于此，grep 无散落） ---
 !/config/
