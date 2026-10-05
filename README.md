@@ -1,13 +1,15 @@
 # chenmai-playable-universal · 可玩广告通用产线（升级线新仓）
 
 > PU-0002 建仓（2026-10-03）。规划裁定：新起 sibling 仓，`factory\chenmai8\` 冻结为差分 oracle（A 级资产，禁改）。
-> 状态：**纯仓骨架，零业务代码**。git 纯本地（**不配 remote、不 push**——ESC-018 owner 未裁决）。
+> 状态：**纯仓骨架 + foreign-runner 门禁留档（PU-0002～PU-0005）**。
+> 远端：2026-10-05 起 owner 指令推 GitHub 公开仓 **https://github.com/feasy898/chenmai-playable-universal**（remote 名 `gh`；原「不配 remote、不 push」的 ESC-018 裁决由 owner 2026-10-05 指令覆盖）。
 
 ## 权威文档（绝对路径，单一事实源）
 
 - 规划：`D:\new-workspace\澄迈项目\可玩广告\_playable_plan\最终规划文档.md`（v1.0，十节+15 裁定；本仓组织裁定=§5.1，模块切分=§5.2）
 - 测试：`D:\new-workspace\澄迈项目\可玩广告\_playable_plan\最终测试文档.md`（v1.0，48 可见+13 holdout；目录与留档制度=§六，仓储纪律静态断言=§二 U-06）
-- oracle（冻结禁改）：`D:\new-workspace\澄迈项目\可玩广告\factory\chenmai8\`
+- 留底快照：上述权威文档与 stage1/stage3 思考轨迹已于 2026-10-05 复制入本仓 `plan-legacy/`（源头单一事实源仍在 `_playable_plan`；快照不改写、仅留档）
+- oracle（冻结禁改）：`D:\new-workspace\澄迈项目\可玩广告\factory\chenmai8\`（**不在本仓**，完整 factory 见 agentic-factory-projects 仓）
 - holdout 保密目录：`<PU_HOLDOUT_DIR>`（仓外，worker 禁读；任何入 git 文件只许写此占位符）
 
 ## 仓纪律（第一天起，U-06 断言对象）
@@ -30,6 +32,7 @@ fixtures/{golden,bad,mut,cassette}/   # 金标/负例/变异/cassette 夹具
 data/inputs/               # 输入集登记（入库）
 data/oracle-isolated/      # oracle 源包隔离目录（不入 git、只读、白名单排除）
 intake/ understand/ plan/ synthesize/ package/ judge/ report-regression/   # 七模块空壳（各见其 README）
+plan-legacy/               # 源规划区 _playable_plan 留底快照（2026-10-05 入仓；含最终规划/测试文档 v1.0 与 stage1/stage3 思考轨迹）
 config/thresholds.mjs      # 待拍板阈值常量表
 tools/                     # 仓库工具（探针/复核器，只用标准库）
 ```
