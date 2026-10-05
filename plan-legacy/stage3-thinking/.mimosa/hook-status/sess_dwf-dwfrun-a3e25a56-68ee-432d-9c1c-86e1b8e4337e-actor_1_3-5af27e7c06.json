@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-10-03T14:10:58.325Z",
+  "sessionId": "sess_dwf-dwfrun-a3e25a56-68ee-432d-9c1c-86e1b8e4337e-actor_1_3",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "testthinking-T5-holdout设计.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 17,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

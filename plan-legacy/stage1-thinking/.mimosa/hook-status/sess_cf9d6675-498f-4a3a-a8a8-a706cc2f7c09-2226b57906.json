@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-10-03T12:58:02.042Z",
+  "sessionId": "sess_cf9d6675-498f-4a3a-a8a8-a706cc2f7c09",
+  "event": "PostToolUse",
+  "toolName": "Edit",
+  "file": "D:\\new-workspace\\澄迈项目\\可玩广告\\factory\\.zcode\\workflow-drafts\\MiniMax-三代理-stage1-规划思考.dwf.ts",
+  "outcome": "inconclusive",
+  "coverage": "partial",
+  "findingCount": 0,
+  "durationMs": 65,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

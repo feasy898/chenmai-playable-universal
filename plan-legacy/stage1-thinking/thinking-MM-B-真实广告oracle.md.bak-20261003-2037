@@ -1,0 +1,275 @@
+# 视角4 · MM-B：真实可玩广告 oracle 与吸引力基准（stage1 思考轨迹）
+
+> 视角：真实在投 playable ads 从哪来、怎么到手、oracle 库怎么设计、「吸引人」怎么量、怎么跟它比。
+> 纪律：本文所有带 ✅ 的事实都是本次（2026-10-03）在本会话亲自跑过命令得到的；带「推断」的是我的推理；带「待验证」的是我拿不到的。
+> 环境说明：本机 WebFetch 的抽取模型全程返回 `Provider rejected the model request`（试过 wikipedia/github/两个搜索引擎共 6 次），因此改用 `curl -sk` 直取 + 本地 python 抽文本。下文所有 URL 都是这样实抓的。
+
+---
+
+## 一、结论先行（我的倾向）
+
+优先级排序（若由我定）：**① 已知活链接的定向采集 > ② 公开广告库自动化 > ③ 付费情报库 > ④ YouTube 拆解**。
+
+理由只有一条，但我认为它是决定性的：**只有第①条今天就能拿到 HTML5 源包本身**。我这次实测：两条独立来源、21/21 条样本 HTTP 200、无鉴权、0.64–1.67 MB 单文件。②③④ 三条路本次全部走不通（详见 §2 的逐项实测记录）。这不是"降级方案"，这是当前唯一可执行的路径。
+
+「吸引人」的判据我倾向**双层**：L3a 可机检层（结构 + 时序代理指标）+ L3b 盲评层（双盲左右同屏胜率），并且**必须在规划里白纸黑字写明 L3a 的区间是自建基线、不是行业基准**——因为公开可及的行业转化数字，我这次一条都没拿到（§5 末）。
+
+---
+
+## 二、来源逐一评估（可得性 × 样本质量）
+
+### 2.1 广告情报/素材库：BigSpy / AppGrowing / MobileAction / Sensor Tower
+
+| 平台 | 实测结果（2026-10-03） | 可得性判定 |
+|---|---|---|
+| `bigspy.ai` | `nslookup -type=A bigspy.ai 8.8.8.8` 返回域名但**无 A 记录**（NOERROR/NODATA）；`curl -sk https://bigspy.ai/` → `http=000` | **不可达，待验证**（是否仍在运营） |
+| `appgrowing.com` | 同上，**无 A 记录**，`http=000` | **不可达，待验证** |
+| `www.mobileaction.co` | `http=200`（191 KB）。首页产品线有 "Ad Intelligence — Find and understand the ad creative best practices in your category"，但全部入口是 `Book a Demo` / `Request a Demo` / `See Details` | **可达但销售门禁**，无可自助素材库入口 |
+| `sensortower.com` | `http=200`（262 KB）。定位 "Digital Intelligence & App Data Analysis"，覆盖 apps/web/ads/gaming，自述采集自 first-party consumer panel + app store APIs；入口为 `Request Demo` / `Sign Up` | **可达但门禁**；且其广告侧产品是"投了什么/在哪投/量级"，非"可玩广告源文件" |
+
+**我的推断（非事实）**：这类平台交付的是**视频/图片预览 + 投放元数据**，不交付 HTML5 源包——在投的可玩广告是广告主的资产，情报平台没有分发它的商业理由。所以这一路最多是**二级来源**（选品类、找广告主名、查投放量级），**不能当 oracle 源包来源**。是否真的提供 downloadable playable，**待验证**（需一次真实注册，我没有账号、也不打算为了取证去注册）。
+
+### 2.2 公开广告库
+
+- **Meta Ad Library** `https://www.facebook.com/ads/library/` → `http=403`（未登录/未过风控）。**需登录，半可得。**
+- **Google Ads Transparency Center** `https://adstransparency.google.com/` → `http=200` 但 2.54 MB 单页 JS 应用，无头直取拿不到素材。**需浏览器自动化 + 可能要点同意条款，半可得。**
+- **TikTok Creative Center** → 302 到 `/creative/creativeCenter/trends`，`http=200` 但仅 20 KB（JS 应用）。**半可得；且品类不适配**——playable 主要跑在 AppLovin/Unity/Mintegral/Meta/Vungle 系，TikTok 库里没有 playable 品类。
+
+更关键的一点（推断）：**公开广告库里 playable 通常只以"用户在广告位上玩的那段录屏"呈现，不是可交互 HTML**。所以这条路拿不到源包，只能拿录屏 + 元数据。
+
+### 2.3 ★ 两个实证在活的可玩广告 HTML5 语料（本次亲自验过）
+
+**来源一：`static.zplay.cn`（ZPlay 广告平台 CDN）**
+入口是 GitHub 仓 `WckY/Playable-ads` 的 `正文.md` §5「部分王牌H5试玩广告线上链接」。该仓 ★19、**无 license**、最后 push 2023-04。
+
+✅ 实测：逐条 curl 验活 **16/16 = HTTP 200**，0.64–1.67 MB，`content-type: text/html`，**无鉴权**。
+✅ 下载 6 条做静态结构分析：
+
+| 样本 | 字节 | 外链 | `mraid.open` | `location.href` | data:image 数 |
+|---|---|---|---|---|---|
+| popstar_appLovin_en | 1,211,974 | 无 | 1 | 0 | 24 |
+| drawIt_scratch_cn | 641,812 | 无 | 0 | 1 | 12 |
+| idleGrassCutter_en | 870,304 | **2 个 `<script src>` → `s0.2mdn.net`** | 0 | 1 | 20 |
+| willhero_cn | 719,451 | 无 | 0 | 1 | 22 |
+| paperPlane_bomb_en | 1,672,828 | 无 | 0 | 1 | 21 |
+| hexa_cn | 1,296,214 | 无 | 0 | 1 | 21 |
+
+三个由此得出的硬事实：
+1. **5/6 完全自包含**（零外链、`<script src>`=0、图片全内联）。**1/6 真实在投广告带外链 CDN 依赖**（Google Ad Manager 的 easeljs_0.8.1 / tweenjs_0.6.1）——按我们的 CHK03「零外网请求」它会被判 fail。**这说明我方规则严于市场实况，不能拿自己的严线去判 oracle。**
+2. **退出机制按平台变**：`_appLovin_` 变体用 `mraid.open`，`_adwords_` 变体全部用 `location.href` 直跳。同一款游戏不同投放平台 = 不同实现。
+3. **URL 命名即免费元数据**：`ad_canPlay/<game>/<variant>/plat/<name>_<platform>_<locale>.html`，直接给出 游戏 / 创意变体号 / 目标平台 / 语言四元组。且同一游戏有 **2–5 个创意变体**（popstar ≥4、paperPlane ≥4、idleGrassCutter ≥2、willhero ≥2、hexa ≥2、drawIt ≥2）。
+
+⚠️ 采集坑：目录列举不可用——`https://static.zplay.cn/wap/ad_canPlay/` 返回 `http=200` 但 **0 字节**。**语料必须靠种子链接采集，爬虫路线不成立。**
+
+**来源二：`www.lolipopmobi.com`（赤子城/Lollipop 自有素材站）**
+入口是同仓的 `Slots、社交品类部分试玩.md` 与 `工具品类部分试玩.md`。
+✅ 实测：抽验 **5/5 = HTTP 200**，0.09–1.26 MB。
+✅ 品类覆盖（原文逐条列出）：刮刮卡/博彩（圣诞刮刮、PayPal 主题天女散花、砸钱袋）、社交（GAGA 翻牌子 / 雷达扫描 / 选择玩法 / 打字机详情）、工具（清理-龙卷风、清理-内存已满）。**这正好补上 zplay 缺的社交/工具/博彩三大桶。**
+⚠️ `https://www.lolipopmobi.com/goujian/` → **403**，同样不能爬。
+
+### 2.4 GitHub 样例仓：给的是"怎么做"，不是"什么在投"
+
+✅ 经 api.github.com 实测：
+
+| 仓 | ★ | 许可 | 性质 |
+|---|---|---|---|
+| `fkworld/cocos-to-playable-ad` | 113 | MIT | Cocos Creator → 单 HTML |
+| `indiesoftby/defold-playable-ads` | 64 | MIT | Defold → 单 HTML（Gulp），pushed 2026-08-05 |
+| `smoudjs/playable-sdk` | 62 | MIT | **统一多网桥 SDK**，pushed 2026-09-30（活跃）。覆盖 IronSource(MRAID/DAPI)/AppLovin/Unity Ads/Google Ads/Meta/Moloco/Mintegral/Vungle；含横竖屏/resize 自动处理、pause/resume 生命周期、音量管理、interaction tracking、零外部依赖 |
+| `Qugurun/phaser-to-playable-ad-html5` | 6 | MIT | Phaser → 单 HTML |
+| `alp-kurt/unity-playable-ad-example` | 7 | **GPL-2.0** | ⚠️ 传染 |
+| `WckY/Playable-ads` | 19 | **无 license** | 40 文件、11 款品类、4 份品类 md；但**只有 `Popstar消灭星星/` 一个目录有真代码**，其余是截图 + 文字详解 + 线上链接 → **它是"索引+语料链接"，不是代码库** |
+
+结论：GitHub 提供的是**工程知识（单 HTML 合规打包、多网退出桥）**，而真实语料提供的是**市场实况**。两者不可互相替代。`smoudjs/playable-sdk` 值得单独看一眼——它把我们 `engine-bridge` 想做的事（多平台退出+静音+生命周期）做成了可 npm 装的现成件，是个可能被忽视的省力点。
+
+### 2.5 平台官方 showcase/demo
+
+✅ `https://docs.unity.com/en-us/grow/programmatic/unity-exchange/playable-ads`（200，Last updated 5 months ago）给出官方交付规范：必须尽早 `<script src="mraid.js">`；用 `mraid.addEventListener('ready')` + `mraid.getState()` 双保险，防 ready 事件早于注册；`MRAID_ENV` 提供 version/sdk/sdkVersion/appId/limitAdTracking/coppa（**Unity 不支持 `ifa`**）；必须注册 error/ready/sizeChange 监听。页面还写明 **"Playable ads are the second-most popular type of ad shown on Unity Exchange"**。
+✅ `https://docs.unity.com/en-us/grow/acquire/creatives/creative-types`（200）把 **video / playable / end card / product page 并列为四种独立创意资产**——**end card 是独立创意位，不是 playable 的附属**，这一条直接影响我们的 DoD 分层。
+❌ **MRAID 原文当前不可达**：`mraid.org` DNS 指向 208.92.80.113，但 TLS 证书 altname 不匹配（挂的是 squarespace 证书）；Wayback availability API 对 `mraid.org/specifications/MRAIDv3.0FinalSpec.pdf` 返回 `archived_snapshots: {}`，CDX 查询 0 条。**MRAID 规范原文 = 待验证**，只能以 Unity/IAB 的转述为准（这属于视角3 MM-A 的地盘，我只做标记）。
+
+### 2.6 YouTube teardown（未实测，标待验证）
+
+本机到 YouTube 通路本次未测。我的**推断**：teardown 类内容给的是**人工拆解结论**（钩子位置、节奏、CTA 时点），价值在"指标词表"（帮我们定义什么叫钩子），不在"样本本体"。建议当二级来源。
+
+---
+
+## 三、怎么拿到手：HTML5 源包 / 录屏 / 截图+结构分析
+
+- **HTML5 源包**：只能从广告主/代理商侧的公开 CDN 拿。本次实证 21/21 活。技术上可下，**法务上是广告主/代理商的著作权资产**。
+- **录屏**：公开广告库/情报平台给的就是这个，门槛见 §2.2。
+- **截图 + 结构分析**：✅ **本次实证可行且零安装**。`msedge.exe --headless=new --disable-gpu --no-sandbox --screenshot=<path> --window-size=360,640 --virtual-time-budget=10000 file:///C:/.../xxx.html` 直接渲染本地 HTML，6/6 成功出图（本机 Edge 在 `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`）。
+
+🔴 **踩到的坑（必须写进规划的教训）**：我第一次用 Git Bash 的 `/c/Users/...` 拼 `file:///` 路径，Edge **静默渲染出一个 `ERR_FILE_NOT_FOUND` 页面**，4 张截图字节数完全相同（9301 B）才暴露。**如果不查字节数一致性，会把"文件没找到"当成"这条广告渲染为空白"写进 oracle 元数据。** 建议：任何 headless 截图管线都内置"同尺寸截图字节数聚类 + 灰度方差"双检（后者我们现成——qacore 的 `grayscaleVariance`，见 `chenmai-playable-factory/qacore/src/run.ts` 的 `variance: grayscaleVariance(...)`）。
+
+### 版权与合规（我的倾向，强烈建议 owner 拍板写成红线）
+
+21/21 样本著作权在广告主/代理商，**无开源许可**；GitHub 唯一有许可的 playable 仓是 GPL-2.0（传染）。建议纪律：
+
+1. **oracle 库只存"特征向量 + 派生指标 + 缩略截图 + 人工标注"，不存源包本体**；
+2. 源包放本机隔离目录，**不入 git、不外发**、不进任何交付包；
+3. 派生指标（时长、打点、事件流）属事实性测量，用于内部对标不构成作品复制；
+4. 🔴 **最高风险项：把 oracle 源包喂进我们自己的 LLM 生成上下文 = 间接复制。必须硬隔离。**
+5. `alp-kurt/unity-playable-ad-example`（GPL-2.0）**不允许**参考实现。
+
+---
+
+## 四、oracle 样本库设计
+
+### 4.1 规模：建议第一版 30–40 条，不是 300
+
+理由：每条的成本不在"下载"（一次 curl，秒级），而在**人工标注**（首屏钩子文案、CTA 位置与时机、教学时长、循环时长、结束页形态）。按 15–20 分钟/条估，30–40 条 ≈ 1 人日；300 条 ≈ 3–5 人周，且**边际信息量低**——本次 5 张首屏截图里有 3 条属同一型，首屏结构高度重复。
+
+### 4.2 覆盖：按"机制桶"而不是按"游戏名"
+
+这 8 桶不是我拍脑袋排的，**是本次两个来源实测合出来的**：
+
+| 桶 | 实测来源 |
+|---|---|
+| ① 消除/三消/合成 | zplay（Popstar） |
+| ② 物理弹射/绳索解谜 | zplay（Will hero、drawIt scratch） |
+| ③ 放置挂机/割草 | zplay（IdleGrassCutter、Idle Press） |
+| ④ 竞速跳跃 | zplay（PaperPlanePlanet、球球你跳跳转） |
+| ⑤ 绘画/涂色/刮刮 | lollipop（圣诞刮刮、PayPal 散花）+ zplay（drawIt、Kolor It） |
+| ⑥ 拼图/旋转 | zplay（Hexa Drawn）+ lollipop（翻牌子） |
+| ⑦ 社交/剧情选择 | lollipop（GAGA 雷达/选择玩法/打字机） |
+| ⑧ 工具/伪应用商店页 | lollipop（清理-龙卷风、清理-内存已满）+ drawIt 首屏 |
+
+### 4.3 每条记录什么元数据（四组）
+
+**A. 溯源组**：`id`、`source_host`、`source_url`、`retrieved_at`、`sha256`、`http_status`、`bytes`、`content_type`、`license_status`（本次全部 = proprietary/unknown）。
+
+**B. 静态结构组（可全自动，本次已跑通，零成本）**：外链请求数与域名清单、`<script src>` 数、data:image 内联资源数、总字节、是否含 mraid/DAPI/FbPlayableAd/ExitApi、退出机制（mraid.open / location.href / 无）、**设计朝向**（竖/横/自适应，从渲染截图判断）、`game / creative_variant / platform_target / locale` 四元组（zplay 的 URL 天然带，lollipop 靠文件名后缀）。
+
+**C. 行为组（需 headless 驱动 Playwright；本仓当前无 node_modules，**本次未跑**，先记 skip）**：首屏可交互时间、首帧非空白判定（沿用 qacore 的灰度方差）、到第一次有效输入的时长、单轮核心循环时长、到结束页时长、**CTA 首帧是否可见**、CTA 触发点（点击/胜利/超时）。
+
+**D. 人工标注组**：首屏钩子文案原文、钩子类型（指令式/悬念式/伪应用商店/玩法演示）、手势提示有无、CTA 位置与文案、教学阶段时长（人工计时）、结束页形态（立即安装/商店页/再玩一次）。
+
+### 4.4 顺带得出的一条服务设计建议
+
+zplay 同一款游戏有 2–5 个创意变体 × 多平台 × 多语言。**说明真实生产的单位不是"一个 playable"，而是"一个 playable × N 个创意变体"。** 我们现状是 4 模板 × 2 语言 × 6 渠道 = 48 包，但那是**同一玩法换渠道包装**，不是**换钩子**。如果 oracle 比对只按"包能不能出"来验收，会漏掉这一维。
+
+---
+
+## 五、「吸引人」的可度量代理指标
+
+### 5.1 唯一拿到的官方数字基准：Unity LevelPlay Ad Quality
+
+✅ `https://docs.unity.com/en-us/grow/ad-quality/ux-patterns`（2026-10-03 抓取）给了默认 UX 阈值表：
+
+| 指标 | 激励视频 | 插屏 | 横幅 |
+|---|---|---|---|
+| CTR | 70% | 70% | 80% |
+| Bounce rate | 80% | 80% | 80% |
+| Ad escape rate | 20% | 20% | — |
+| **Ad duration** | **45 s** | **30 s** | — |
+| Auto clicks | 50% | 50% | — |
+| Proximity clicks | 50% | 50% | — |
+| Early clicks | 50% | 50% | 50% |
+| Churn rate D1/D3/D7/D14 | 20% | 20% | 20% | 20% |
+
+**限定必须一起引用**：① 这是"坏 UX 触发打标"的阈值，**不是"好表现"的标杆**；② 表里**没有 playable 这一列**（只有 rewarded/interstitial/banner）——**待验证** playable 的对应阈值。
+
+✅ 同站 glossary 给了精确定义，这是本次最有价值的一份可落地方案：
+- CTR = clicks / impressions
+- Bounce rate = hasty clicks / total clicks（hasty = 点出 App 后 5 秒内返回）
+- Ad escape rate =（无 close 事件且无 click 的曝光）/ 总曝光
+- **Ad duration = 用户看完广告和 end card 到关闭的【中位】时长**
+- Auto clicks = **无触摸**的点击；Proximity clicks = **屏幕顶角**的点击；Early clicks = 见到素材后**第一秒内**的点击
+- **QClicks = 总点击 − (hasty + proximity + auto + early)**；**QCTR = QClicks / impressions**
+- Churn rate Dx = 点击后离开 Dx 天的占比
+- ⚠️ 原文声明："Ad Quality does not use filters to collate click metrics"，故与广告平台报表会有差异。
+
+🔴 **我的核心主张：「吸引人」不该用 CTR 定义，应该用 QCTR。** 因为 QCTR 的每一个分量（点击坐标、距首帧的时延、是否跳出 App 又 5 秒内返回）**都能在 Playwright 里本地测出来**——而 CTR 需要真实流量。这一条还顺带接上了反作弊红线：一个靠自动脚本空打的 playable，auto-click 占比会天然爆表，QCTR 会直接把它判死。
+
+### 5.2 我自己提的结构侧代理指标（**推断**，来自本次 5 张首屏截图实测归纳，无官方数字）
+
+| 指标 | 本次实测值 |
+|---|---|
+| **CTA 首帧可见率** | **5/5 = 100%**（Download Now / 立即下载 / DOWNLOAD / 立即安装 / drawIt 的"下载"按钮） |
+| **首屏祈使指令存在率** | 5/5（点击试玩 / TAP TO START / TAP TO LAUNCH / 点击旋转 / 猜猜照片是谁？） |
+| **手势提示（手指/箭头图示）存在率** | 5/5 |
+| **首屏背景已在跑真实玩法** | 4/5（drawIt 是伪商店页，例外） |
+| 首屏指令文案语种 vs 素材语种 | 可混用（hexa 是英文 logo + 中文指令） |
+
+推断：**CTA 藏在胜利之后是反模式**；**首屏必须有一个明确祈使动作 + 手势提示**；**用伪应用商店页当首屏是一条独立且成熟的创意路线**（drawIt 那条直接把 app icon / 星级 (968,489) / "免费" / 下载按钮 做成首帧）。
+
+### 5.3 🔴 行业转化基准：本次一条都没拿到
+
+逐条实测：`appsflyer.com/resources/` 200 但 `/mobile-app-marketing/` 与 `/app-marketing-benchmarks/` 均 **404**；`adjust.com/blog/playable-ads/` **429**；`blog.adjust.com` **NXDOMAIN**；`liftoff.io` **403**；`www.ironsource.com` **DNS 超时**；`applovin.com/blog/playable-ads/` 301 到博客首页；`unity.com/blog/gaming/playable-ads` **404**。搜索侧：DuckDuckGo HTML 返回 202 空壳页、Bing 返回无结果的壳页、Brave 未测。
+
+**结论：截至 2026-10-03，本机拿不到任何可引用的第三方 playable 转化率数字。** 行业基准只能走付费/合作渠道（网络方直给 / 索取行业白皮书 / 自投小额实测）——**这是需要 owner 拍板的开放问题，不是可以绕过的执行细节。**
+
+另有一条 practitioner 说法要标出来：`WckY/Playable-ads` 正文 §6 称「国外不同平台相同的要求，H5 全部文件最大不能超过 1M」。这与我们 `channel-rules/channel-rules.json` 里 applovin 5MB / meta 3MB 冲突。对方是 2019–2023 的一线从业者，说法可能对应 Google AdWords 时期的限制。**待验证**，以视角3 MM-A 的官方规格为准。
+
+---
+
+## 六、与 oracle 比对的方法：三层 + 我建议加的第四层
+
+### 6.1 结构比对（静态，零浏览器）
+- **能回答**：包形态对不对、退出接口对不对、有没有外链、字节多大、变体矩阵齐不齐。
+- **能自动到什么程度**：本次已做到——21/21 下载 + sha256 + 外链/MRAID/location.href/字节统计，纯 curl + python，无安装。
+- **坑 1**：我们的 channel-rules 是**内部从严**写死的，用它判 oracle 会**大面积假红**（本次 idleGrassCutter 的 `s0.2mdn.net` 外链就会被 CHK03 判 fail）。→ 结构比对必须**分两栏**：「平台规格栏」（官方规格）与「我方严于规格栏」（内部线），只对前者判 pass/fail。
+- **坑 2**：早期素材（2019–2021）无 MRAID 注入、直接 `location.href`，包形态与现代规则不同。→ **oracle 必须按采集日期分层**，拿 2020 年的素材比 2026 年的渠道规则会得出错误结论。
+
+### 6.2 行为比对（事件流）
+- **能回答**：首屏多久能玩、一次核心循环多长、结束页是否真到、CTA 何时可点。
+- 🔴 **现状硬约束（读仓确认）**：现有 qacore 的自动试玩**依赖模板自带的 `window.__PF_QC__` 钩子**——`factory/chenmai8/chenmai-playable-factory/qacore/src/autoplay.ts:42` 取 `hint(x,y,type)`、`:38 hint()`、`:25 state()`、`:229 hasQcHooks()`，`:358` 处钩子不存在就 `facts.gestures` 恒为 0。**它开箱跑不了第三方广告。** 要做 oracle 行为比对，必须新写一个 **hook-free 通用驱动器**。
+- **最省钱方案（推断）**：复用本次已验证的 headless Edge 通路 + **确定性策略**（首屏截图 diff 找可交互热点 → 网格扫点 → 事件序列回放），用**像素方差时间序列**当"画面在动"的代理。
+- **坑 1**：**虚拟时间 ≠ 真实时间**。`--virtual-time-budget` 快进对 requestAnimationFrame 驱动的 canvas 游戏行为与真机不同 → 教学时长/循环时长这类指标**必须真机或真实时钟跑**。
+- **坑 2**：手指/音效/震动全丢，"手感"类指标只能靠盲评。
+- **坑 3**：自动点击会让 Unity 那套 auto-click/early-click 指标**天然爆表** → QCTR 必须在"人类式点击序列"策略下测，否则测出来的数没意义。
+
+### 6.3 体验比对（盲评）
+- **能回答**：像不像一条真广告、好不好玩、看不看得下去——**这是 DoD 里 L3「吸引人」唯一真正对得上的东西**。
+- **最小可行设计**：用同一个 hook-free 驱动器、**同一套交互策略**给每条 oracle 和我们的产物各录一段定长录屏；**混排、去标识、随机左右位置**；评委只答两句：「哪条更像在投广告」「哪条更想点」。左右同屏双盲是成本最低版。
+- **坑 1**：懂行评委能从 UI 风格猜出哪条是我们的 → 必须**去标识**（抹 logo/文案/包体元数据）。
+- **坑 2**：我们的产物在**分辨率/帧率/动画流畅度**上天然吃亏（无头渲染 + canvas）→ 盲评限制在竖屏手机分辨率，并先跑一次"渲染保真度对齐"。
+- **坑 3**：🔴 **盲评是软判据，不能当门禁。** 本群基线里 video 项目已经踩过"CLIP 代理分冒充语义质量"的坑（基线总文 §3.5 的诚实自限声明）。盲评只能当**回归信号 + 分歧定位**，最终判据要回到可机检的量。
+
+### 6.4 我建议加的第四层：不可达性比对
+把我们的产物和 oracle 放进同一个**故意无网 / 低速 / 低端机**环境，记录首屏出现时间、是否白屏、是否卡死。理由：真实在投广告的竞争力一大半来自"弱网 + 中低端安卓"下的启动速度，而 oracle 语料可以直接量化**自包含程度**（本次 5/6 完全内联）。**这一层的指标是可机检的，比盲评硬。**
+
+### 6.5 🔴 关键方法论坑（必须写进规划）
+
+**不要用"我们的 qacore 全绿"当 oracle 比对的通过条件。** 我们是 4 模板（match3/merge/pullpin/sort）+ 内部从严规则，真实广告是无限玩法域。本次实测的 5 张首屏截图里，**没有一条属于 4 模板中的任何一种**。所以比对应该是**逐维度对标 + 差分报告**，不是整体判合格/不合格。
+
+---
+
+## 七、开放问题（需 owner 拍板）
+
+1. **行业基准的钱怎么出**：付费情报库 / 网络合作 / 自投小额实测 / 干脆放弃转化率、改用 QCTR 结构代理作唯一可测口径？——我倾向**第三条为主、第二条为补**。
+2. **oracle 源包入不入仓**：我强烈倾向"不入 git、只入本机隔离目录 + 派生特征向量入库"。要不要明写成红线？
+3. **目标条数**：30–40（我倾向）还是更大？40 之后成本曲线很陡。
+4. **hook-free 通用驱动器要不要现在就写**：它是 oracle 比对的唯一前置，但它服务"研究/评测"而非"生产"，放 factory 主线会污染产物线边界 → 我建议**独立目录/独立包**。
+5. **GPL-2.0 的 `alp-kurt/unity-playable-ad-example` 是否允许参考实现**（传染性）——我倾向不允许。
+
+---
+
+## 八、本次明确"没做"的事（不虚报）
+
+- **未跑 Playwright 行为比对**：本仓无 node_modules（基线总文已载明），本次不安装。§4.3-C 组与 §6.2 的时长类指标**全部未实测**。
+- **未验证 BigSpy / AppGrowing 是否仍在运营**，也未注册任何付费情报平台账号。
+- **未取得任何第三方 playable 转化率/安装率基准数字**（§5.3 逐条实测记录）。
+- **未验证 YouTube / Brave 可达性**。
+- **未做多渠道出口回放**：本次只统计了源文件里 mraid.open / location.href 的出现次数，**没有真正加载运行并触发退出**——真实退出行为需 hook-free 驱动器 + 环境桩。
+
+## 九、本次实跑命令清单（可复核）
+
+```bash
+# 1) 域名可达性（21 条样本验活）
+curl -skL --max-time 20 -o <f> -w "http=%{http_code} size=%{size_download} type=%{content_type}\n" <url>
+# 2) DNS 精查
+nslookup -type=A <domain> 8.8.8.8
+# 3) 零安装 headless 渲染首屏
+msedge.exe --headless=new --disable-gpu --no-sandbox --hide-scrollbars \
+  --window-size=360,640 --virtual-time-budget=10000 \
+  --screenshot=C:/Users/.../edge_<name>.png file:///C:/Users/.../<name>.html
+# 4) GitHub 仓与文件树
+curl -sk -H "Accept: application/vnd.github+json" https://api.github.com/repos/<owner>/<repo>
+curl -sk -H "Accept: application/vnd.github+json" https://api.github.com/repos/<owner>/<repo>/git/trees/master?recursive=1
+# 5) Unity 官方文档与站点地图
+curl -skL https://docs.unity.com/sitemap/grow.xml   # 定位 ad-quality / programmatic 页面
+```
+
+*（视角4 · MiniMax-M3.1-Flash-Preview ｜ 2026-10-03 ｜ 本文所有 ✅ 事实均本次实跑，⛔ 未做的事见 §8）*

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-10-03T13:30:46.103Z",
+  "sessionId": "sess_dwf-dwfrun-5b3d953e-1778-451f-8f61-4f7f823d0e7f-actor_2_2",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "thinking-MM-B-真实广告oracle.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 15,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}
