@@ -1,0 +1,49 @@
+{
+  "version": "humanlike-lite-v0",
+  "root_seed": "20261004",
+  "sha256": "01fb4ef9a6a68cf9ff64c71448b51011d3fa57a365343fe6b8aaaf15a04bb405",
+  "params": {
+    "version": "humanlike-lite-v0",
+    "root_seed": "20261004",
+    "drive_tier": 2,
+    "autoplay_budget_sec": 45,
+    "first_interaction_delay_min_ms": 2500,
+    "max_gestures": 18,
+    "drag_probability": 0.25,
+    "drag_distance_px": 44,
+    "drag_steps": 4,
+    "interval_ms_min": 700,
+    "interval_ms_max": 1500,
+    "interval_jitter_sigma_ms": 200,
+    "grid_cols": 3,
+    "grid_rows": 5,
+    "jitter_xy_ratio": 0.2,
+    "exit_stop_grace_ms": 3000
+  },
+  "corpora": [
+    {
+      "id": "lp_20200428_gaga_infor_vungle_en",
+      "seed": 329503248
+    },
+    {
+      "id": "lp_20201015_clear_sdCard_pangolin_en",
+      "seed": 2063535706
+    },
+    {
+      "id": "zp_drawIt_scratch_adwords_cn",
+      "seed": 1488963359
+    },
+    {
+      "id": "zp_idleGrassCutter_cropper_adwords_en",
+      "seed": 1818534631
+    },
+    {
+      "id": "zp_paperPlane_bomb_adwords_en",
+      "seed": 3680761071
+    },
+    {
+      "id": "zp_popstar_appLovin_en",
+      "seed": 1794325992
+    }
+  ]
+}
